@@ -1,1 +1,1 @@
-[{"route":"/"}]
+[{"route":"/blog/first-post","title":"Angular material","description":"This would be teh first description","date":"Tue Aug 23 2022","published":true,"sourceFile":"first-post.md"},{"route":"/blog/second-post","title":"second blog post","description":"This would be another desjkdjkdjld","date":"Tue Aug 23 2022","published":true,"sourceFile":"second-post.md"},{"route":"/"}]
