@@ -1,0 +1,38 @@
+<div
+  class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+>
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
+      <a href="/" class="mb-6 sm:mx-auto flex justify-center">
+        <div
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50"
+        >
+          <svg
+            class="w-10 h-10 text-deep-purple-accent-400"
+            stroke="currentColor"
+            viewBox="0 0 52 52"
+          >
+            <text x="0" y="30" fill="currentColor" class="font-thin">
+              {{ title }}
+            </text>
+          </svg>
+        </div>
+      </a>
+      <div
+        *ngIf="fullHeader"
+        class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
+      >
+        <h2
+          class="max-w-lg mb-4 font-sans text-3xl font-medium leading-none tracking-tight text-gray-700 md:mx-auto text-center"
+        >
+          Nelson Gutiérrez 🇨🇷
+        </h2>
+        <app-socials></app-socials>
+
+        <p class="text-base text-gray-700 md:text-lg text-center">
+          Artículos sobre Front End, Angular, RxJS y Javascript
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
