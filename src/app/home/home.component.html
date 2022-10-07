@@ -3,10 +3,8 @@
     <app-header></app-header>
   </div>
   <div class="blog-list">
-    <ul>
-      <li *ngFor="let page of links$ | async">
-        <a [routerLink]="page.route">{{ page.title }}</a>
-      </li>
-    </ul>
+    <app-blog-list [posts]="links$ | async"></app-blog-list>
   </div>
 </div>
+<a routerLink="/about">about</a>
+<router-outlet></router-outlet>
