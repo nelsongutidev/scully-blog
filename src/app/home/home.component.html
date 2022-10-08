@@ -3,7 +3,10 @@
     <app-header></app-header>
   </div>
   <div class="blog-list">
-    <app-blog-list [posts]="links$ | async"></app-blog-list>
+    <app-blog-list
+      class="w-full flex flex-col gap-8"
+      [posts]="links$ | async"
+    ></app-blog-list>
   </div>
 </div>
 <a routerLink="/about">about</a>
