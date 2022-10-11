@@ -12,6 +12,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('../about/about.module').then((m) => m.AboutModule),
       },
+      {
+        path: '',
+        loadChildren: () =>
+          import('../blog-list/blog-list.module').then((m) => m.BlogListModule),
+      },
     ],
   },
 ];

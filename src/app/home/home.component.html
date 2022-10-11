@@ -2,12 +2,19 @@
   <div class="home-content">
     <app-header></app-header>
   </div>
-  <div class="blog-list">
-    <app-blog-list
-      class="w-full flex flex-col gap-8"
-      [posts]="links$ | async"
-    ></app-blog-list>
-  </div>
+
+  <nav class="flex justify-center space-x-4">
+    <a
+      routerLink=""
+      class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+      >Blog</a
+    >
+    <a
+      routerLink="/about"
+      class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+      >About</a
+    >
+  </nav>
 </div>
-<a routerLink="/about">about</a>
+
 <router-outlet></router-outlet>

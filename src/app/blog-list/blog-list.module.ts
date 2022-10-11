@@ -5,7 +5,10 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [BlogListComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([{ path: '', component: BlogListComponent }]),
+  ],
   exports: [BlogListComponent],
 })
 export class BlogListModule {}

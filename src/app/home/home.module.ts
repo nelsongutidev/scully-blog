@@ -8,6 +8,6 @@ import { BlogListModule } from '../blog-list/blog-list.module';
 @NgModule({
   declarations: [HomeComponent],
   exports: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule, HeaderModule, BlogListModule],
+  imports: [CommonModule, HomeRoutingModule, HeaderModule],
 })
 export class HomeModule {}
