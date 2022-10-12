@@ -17,3 +17,10 @@ hdjhks
 ## another vblock
 
 sndsjdks
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+~~The world is flat.~~

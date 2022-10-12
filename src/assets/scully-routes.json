@@ -26,5 +26,6 @@
     "arbitraryArray": ["first item", "second item"],
     "sourceFile": "third.md"
   },
-  { "route": "/" }
+  { "route": "/" },
+  { "route": "/about" }
 ]
