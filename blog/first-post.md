@@ -22,5 +22,37 @@ sndsjdks
 | --------- | ----------- |
 | Header    | Title       |
 | Paragraph | Text        |
+| Paragraph | Text        |
+| Paragraph | Text        |
+| Paragraph | Text        |
 
 ~~The world is flat.~~
+
+~~The world is flat.~~
+
+> hey
+
+```html
+<h1>nelson</h1>
+```
+
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+```javascript
+const object = {
+  name: "nelson",
+  getName: () => "nelson gutierrez",
+};
+```
+
+```css
+h1 {
+  display: flex;
+}
+```
