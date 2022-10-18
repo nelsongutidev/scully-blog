@@ -4,26 +4,14 @@
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     <div class="flex flex-col mb-6 sm:text-center sm:mb-0">
       <a routerLink="" class="mb-6 sm:mx-auto flex justify-center">
-        <div
-          class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50"
-        >
-          <svg
-            class="w-10 h-10 text-deep-purple-accent-400"
-            stroke="currentColor"
-            viewBox="0 0 52 52"
-          >
-            <text x="0" y="30" fill="currentColor" class="font-thin">
-              {{ title }}
-            </text>
-          </svg>
-        </div>
+        <app-svg-header></app-svg-header>
       </a>
       <div
         *ngIf="fullHeader"
         class="max-w-xl mb-6 md:mx-auto sm:text-center lg:max-w-2xl md:mb-6"
       >
         <h2
-          class="max-w-lg mb-4 font-sans text-3xl font-medium leading-none tracking-tight text-gray-700 md:mx-auto text-center"
+          class="max-w-lg mb-4 font-sans text-2xl font-medium leading-none tracking-tight text-gray-700 md:mx-auto text-center"
         >
           Nelson Gutiérrez 🇨🇷
         </h2>
