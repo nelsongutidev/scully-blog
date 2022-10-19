@@ -5,6 +5,7 @@
     stroke-dasharray: 110;
     stroke-dashoffset: 90;
     animation: dash 4s ease-in forwards;
+    animation-iteration-count: infinite; // evaluate this!
   }
 
   .path.char-n {
@@ -72,6 +73,7 @@
 
   .path.char-v {
     animation-delay: 4s;
+    animation-duration: 10s;
     // stroke-dasharray: 120;
   }
 
