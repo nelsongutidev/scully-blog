@@ -1,1 +1,47 @@
-<router-outlet></router-outlet>
+<main class="relative min-h-screen md:flex">
+  <!-- mobile menu bar -->
+  <nav class="bg-gray-700 text-gray-100 flex justify-between md:hidden">
+    <a
+      class="flex items-center space-x-2 pl-4 h-16"
+      routerLink="/"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-angular-logo></app-angular-logo>
+      <span class="text-2xl font-thin">nelsonguti.dev</span>
+    </a>
+    <button
+      class="p-4 foucs:outline-none focus:bg-gray-700"
+      (click)="isMenuClosed = !isMenuClosed"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </button>
+  </nav>
+  <!-- end mobile menu bar -->
+
+  <!-- large screen menu -->
+  <aside
+    [ngClass]="{ '-translate-x-full': isMenuClosed }"
+    class="bg-gray-900 text-gray-100 w-80 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out"
+  >
+    <app-sidenav class="space-y-6"></app-sidenav>
+  </aside>
+  <!-- end large screen menu -->
+
+  <section class="flex-1 p-10 text-2xl">
+    <router-outlet></router-outlet>
+  </section>
+</main>

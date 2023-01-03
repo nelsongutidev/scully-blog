@@ -1,48 +1,80 @@
-<span
-  class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
-  (click)="open = !open"
+<a
+  class="flex items-center space-x-2 pt-6 px-6"
+  routerLink="/"
+  routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{ exact: true }"
 >
-  <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
-</span>
-<div
-  class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
-  [ngClass]="{ hidden: open }"
->
-  <div class="text-gray-100 text-xl">
-    <div class="p-2.5 mt-1 flex items-center">
-      <i class="bi bi-code-square px-2 py-1 rounded-md bg-blue-600"></i>
-      <h1 class="font-bold text-gray-200 text-[15px] ml-3">nelsonguti.dev</h1>
-      <i
-        class="bi bi-x cursor-pointer ml-24 lg:hidden"
-        (click)="open = !open"
-      ></i>
-    </div>
-    <div class="my-2 bg-gray-600 h-[1px]"></div>
-  </div>
-  <div
-    class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white"
+  <app-angular-logo></app-angular-logo>
+  <span
+    class="text-2xl font-thin relative cursor:pointer transition-all duration-500 before:content-[''] before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 before:rounded-full before:opacity-0 before:transition-all before:duration-500 before:bg-gradient-to-r before:from-gray-600 before:via-slate-400 before:to-zinc-500 hover:before:w-full hover:before:opacity-100"
+    >nelsonguti.dev</span
   >
-    <i class="bi bi-search text-sm"></i>
-    <input
-      type="text"
-      placeholder="Search"
-      class="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
-    />
-  </div>
-  <div
-    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-  >
-    <i class="bi bi-house-door-fill"></i>
-    <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span>
-  </div>
-  <div
+</a>
+<hr class="" />
+<nav class="px-2 text-xl">
+  <a
+    routerLink="/blog"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="block py-2 5 px-4 flex items-center space-x-2 hover:bg-gray-600 rounded"
+    ><svg
+      xmlns
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+      />
+    </svg>
+    <span>Blog</span></a
+  ><a
+    routerLink="/tips"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="block py-2 5 px-4 flex items-center space-x-2 hover:bg-gray-600 rounded"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"
+      />
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"
+      />
+    </svg>
+    <span>Tips</span></a
+  ><a
     routerLink="/about"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
-    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    class="block py-2 5 px-4 flex items-center space-x-2 hover:bg-gray-600 rounded"
+    ><svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+      />
+    </svg>
+    <span>About </span></a
   >
-    <i class="bi bi-bookmark-fill"></i>
-    <span class="text-[15px] ml-4 text-gray-200 font-bold">Blog</span>
-  </div>
-  <div class="my-4 bg-gray-600 h-[1px]"></div>
-</div>
+</nav>
