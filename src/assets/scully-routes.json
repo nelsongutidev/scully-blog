@@ -11,6 +11,13 @@
     "sourceFile": "first-post.md"
   },
   {
+    "route": "/blog/fourth",
+    "title": "Explore the CDK",
+    "description": "In this post you will learn about the angular CDK",
+    "published": true,
+    "sourceFile": "fourth.md"
+  },
+  {
     "route": "/blog/second-post",
     "title": "second blog post",
     "description": "This would be another desjkdjkdjld",

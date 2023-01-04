@@ -1,7 +1,23 @@
 h1 {
-  color:rgb(51, 6, 37);
+  color: rgb(51, 6, 37);
   background-color: rgb(248, 211, 236);
   padding: 5px;
   border-radius: 5px;
   width: fit-content;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 2rem;
 }

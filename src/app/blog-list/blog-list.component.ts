@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-import { Observable } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
@@ -11,10 +11,9 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [CommonModule, RouterModule],
 })
-export class BlogListComponent implements OnInit {
+export class BlogListComponent {
   scullyRouteService = inject(ScullyRoutesService);
-  posts$: Observable<ScullyRoute[]> = this.scullyRouteService.available$;
-  routes$: Observable<ScullyRoute[]> = this.scullyRouteService.unPublished$;
-
-  ngOnInit(): void {}
+  posts$: Observable<ScullyRoute[]> = this.scullyRouteService.available$.pipe(
+    map((routes) => routes.filter(({ published }) => published))
+  );
 }
