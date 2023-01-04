@@ -1,28 +1,25 @@
-<div
-  class="px-4 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
->
-  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-    <div class="flex flex-col mb-6 sm:text-center sm:mb-0">
-      <a routerLink="" class="mb-6 sm:mx-auto flex justify-center">
+<div class="px-4 pt-8 mx-auto max-w-xl">
+  <div class="max-w-xl mx-auto">
+    <div class="flex flex-col mb-6 text-center mb-0">
+      <a routerLink="" class="mb-6 mx-auto flex justify-center">
         <app-svg-header></app-svg-header>
       </a>
-      <div
-        *ngIf="fullHeader"
-        class="max-w-xl mb-6 md:mx-auto sm:text-center lg:max-w-2xl md:mb-6"
-      >
-        <!-- <h2
-          class="max-w-lg mb-4 font-sans text-2xl font-medium leading-none tracking-tight text-gray-700 md:mx-auto text-center"
-        >
-          Nelson Gutiérrez 🇨🇷
-        </h2> -->
+      <div *ngIf="fullHeader" class="max-w-xl mb-6 mx-auto sm:text-center">
         <app-socials></app-socials>
 
         <p class="text-base text-gray-700 md:text-lg text-center">
-          Artículos sobre Front End, Angular, RxJS y Javascript
+          Front End Development, Angular, RxJS and Javascript
         </p>
         <p class="text-base text-gray-700 md:text-lg text-center">
           Nelson Gutiérrez 🇨🇷
         </p>
+        <div class="flex mt-10 flex justify-center">
+          <img
+            src="/assets/images/me.jpeg"
+            class="md:w-80 w-48 h-auto rounded"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
-<main class="relative min-h-screen md:flex">
+<main class="relative h-screen md:flex md:overflow-hidden">
   <!-- mobile menu bar -->
-  <nav class="bg-gray-700 text-gray-100 flex justify-between md:hidden">
+  <nav class="bg-gray-900 text-gray-100 flex justify-between md:hidden">
     <a
-      class="flex items-center space-x-2 pl-4 h-16"
+      class="flex items-center space-x-2 pl-4 h-20"
       routerLink="/"
       routerLinkActive="active-link"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -41,7 +41,7 @@
   </aside>
   <!-- end large screen menu -->
 
-  <section class="flex-1 p-10 text-2xl">
+  <section class="flex-1 p-10 text-2xl overflow-y-auto">
     <router-outlet></router-outlet>
   </section>
 </main>

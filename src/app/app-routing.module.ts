@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogComponent } from './blog/blog.component';
+import { HomeComponent } from './home/home.component';
+import { TipsComponent } from './tips/tips.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
+    component: HomeComponent,
   },
   {
     path: 'blog',
-    loadComponent: () =>
-      import('./blog-list/blog-list.component').then(
-        (m) => m.BlogListComponent
-      ),
+    component: BlogListComponent,
   },
   {
     path: 'blog/:slug',
-    loadComponent: () =>
-      import('./blog/blog.component').then((m) => m.BlogComponent),
+    component: BlogComponent,
   },
   {
     path: 'about',
-    loadComponent: () =>
-      import('./about/about.component').then((m) => m.AboutComponent),
+    component: AboutComponent,
+  },
+  {
+    path: 'tips',
+    component: TipsComponent,
   },
 ];
 

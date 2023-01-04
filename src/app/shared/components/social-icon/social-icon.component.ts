@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 export type Social =
@@ -12,14 +13,14 @@ export type Social =
   selector: 'app-social-icon',
   template: `
     <a
-      class="w-full h-full rounded-full overflow-hidden flex items-center justify-center cursor-pointer border border-gray-300 hover:text-primary hover:border-primary transition-colors duration-200 ease-in-out"
+      class="w-full h-full rounded-full overflow-hidden flex items-center justify-center cursor-pointer border border-gray-300 hover:border-cyan-300 transition-colors duration-200 ease-in-out"
       [href]="link"
       rel="noreferrer"
       target="_blank"
       [attr.aria-label]="'Link to ' + socialId"
     >
       <svg
-        class="text-xs w-1/2"
+        class="text-xs w-1/2 0"
         stroke="currentColor"
         fill="currentColor"
         stroke-width="0"
@@ -82,6 +83,8 @@ export type Social =
   host: {
     class: 'w-10 h-10',
   },
+  standalone: true,
+  imports: [CommonModule],
 })
 export class SocialIconComponent {
   @Input() socialId: Social = 'Github';

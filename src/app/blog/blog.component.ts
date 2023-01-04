@@ -1,17 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router, ROUTES } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { HeaderModule } from '../shared/components/header/header.module';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
-  imports: [CommonModule, ScullyLibModule, HeaderModule],
-  preserveWhitespaces: true,
+  imports: [CommonModule, ScullyLibModule],
   standalone: true,
-  encapsulation: ViewEncapsulation.Emulated,
 })
 export class BlogComponent implements OnInit {
   ngOnInit() {}

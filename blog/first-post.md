@@ -57,14 +57,23 @@ h1 {
 }
 ```
 
-- one
-- two
-- three
+## Markdown **rulez**!
 
-* 1
-* 2
-* 3
+---
 
-- test
-- test
-- test
+### Syntax highlight
+
+```typescript
+const language = "typescript";
+```
+
+### Lists
+
+1. Ordered list
+2. Another bullet point
+   - Unordered list
+   - Another unordered bullet
+
+### Blockquote
+
+> Blockquote to the max
