@@ -1,5 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Social } from '../social-icon/social-icon.component';
+import {
+  Social,
+  SocialIconComponent,
+} from '../social-icon/social-icon.component';
 
 @Component({
   selector: 'app-socials',
@@ -15,15 +19,17 @@ import { Social } from '../social-icon/social-icon.component';
     // class: 'w-full grid grid-cols-3 gap-2 mb-4 justify-items-center',
     class: 'w-full flex justify-center gap-4 mb-4 ',
   },
+  standalone: true,
+  imports: [CommonModule, SocialIconComponent],
 })
 export class SocialsComponent {
   socials = [
-    { id: 'Github' as Social, link: 'https://github.com/nelsonGuti' },
+    { id: 'Github' as Social, link: 'https://github.com/nelsongutidev' },
     {
       id: 'LinkedIn' as Social,
-      link: 'https://www.linkedin.com/in/nelson-gutierrez-7649ab63/',
+      link: 'https://www.linkedin.com/in/nelsongutidev/',
     },
-    { id: 'Twitter' as Social, link: 'https://twitter.com/nel81212' },
+    { id: 'Twitter' as Social, link: 'https://twitter.com/nelsongutidev' },
     // { id: 'Youtube' as Social, link: 'https://youtube.com' },
   ];
 }

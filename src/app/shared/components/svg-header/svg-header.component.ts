@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-svg-header',
   templateUrl: './svg-header.component.html',
-  styleUrls: ['./svg-header.component.scss']
+  styleUrls: ['./svg-header.component.scss'],
+  standalone: true,
 })
 export class SvgHeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

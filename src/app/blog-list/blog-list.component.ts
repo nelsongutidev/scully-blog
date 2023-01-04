@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, RouterModule],
 })
 export class BlogListComponent implements OnInit {
-  posts$: Observable<ScullyRoute[]> = this.scully.available$;
-  routes$: Observable<ScullyRoute[]> = this.scully.unPublished$;
+  scullyRouteService = inject(ScullyRoutesService);
+  posts$: Observable<ScullyRoute[]> = this.scullyRouteService.available$;
+  routes$: Observable<ScullyRoute[]> = this.scullyRouteService.unPublished$;
 
-  constructor(private scully: ScullyRoutesService) {}
   ngOnInit(): void {}
 }
