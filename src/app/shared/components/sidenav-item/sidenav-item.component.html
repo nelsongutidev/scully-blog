@@ -1,0 +1,23 @@
+<a
+  routerLink="{{ routerLink }}"
+  routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="block py-2 5 px-4 flex items-center space-x-2 hover:bg-gray-600 rounded"
+  ><svg
+    xmlns
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="w-6 h-6"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="svgPath" />
+    <path
+      *ngIf="secondSvgPath"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      [attr.d]="secondSvgPath"
+    />
+  </svg>
+  <span>{{ label }}</span></a
+>

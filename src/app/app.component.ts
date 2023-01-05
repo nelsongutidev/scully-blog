@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-// import { SidebarService } from './services/sidebar.service';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +6,10 @@ import { Component, inject } from '@angular/core';
 })
 export class AppComponent {
   isMenuClosed = true;
-  title = 'blog';
+
+  toggleMenu() {
+    if (!this.isMenuClosed) {
+      this.isMenuClosed = true;
+    }
+  }
 }
