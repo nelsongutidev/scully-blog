@@ -1,3 +1,8 @@
+<h1
+  class="text-4xl md:text-6xl xl:text-7xl font-bold tracking-tight md:p-12 p-6"
+>
+  Blog
+</h1>
 <div class="w-full flex flex-col gap-8" *ngIf="posts$ | async as posts">
   <ng-container *ngFor="let post of posts">
     <div

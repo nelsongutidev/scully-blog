@@ -44,7 +44,25 @@
   </aside>
   <!-- end large screen menu -->
 
-  <section class="flex-1 p-10 text-2xl overflow-y-auto">
+  <section class="flex-1 overflow-y-auto">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="svg absolute hidden lg:block"
+      style="height: 100vh; width: 100%; z-index: -10"
+    >
+      <defs>
+        <linearGradient id="0" x1="0.94" y1="0.74" x2="0.06" y2="0.26">
+          <stop offset="46%" stop-color="#ffffff" />
+          <stop offset="64%" stop-color="#fdfcfd" />
+          <stop offset="100%" stop-color="#ebf8ff" />
+        </linearGradient>
+      </defs>
+      <rect fill="url(#0)" height="100%" width="100%" />
+    </svg>
+
     <router-outlet></router-outlet>
   </section>
 </main>
