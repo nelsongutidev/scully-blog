@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   standalone: true,
 })
 export class AboutComponent implements OnInit {
+  yearsOfExperience = new Date().getFullYear() - 2017;
+  initials = '<ng />';
   constructor() {}
 
   ngOnInit(): void {}
