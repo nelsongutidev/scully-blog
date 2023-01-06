@@ -2,6 +2,15 @@
   { "route": "/" },
   { "route": "/blog" },
   {
+    "route": "/blog/everysome",
+    "title": "The every() and some() Array Methods in JS The Unpopular Pair",
+    "date": "March, 2019",
+    "published": true,
+    "description": "Two usually forgotten yet handy methods to keep in your bag of tricks",
+    "tags": "Javascript, FP, Methods",
+    "sourceFile": "everysome.md"
+  },
+  {
     "route": "/blog/first-post",
     "title": "Angular material",
     "description": "This would be teh first description",

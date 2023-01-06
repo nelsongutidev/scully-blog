@@ -11,9 +11,6 @@ import { SocialsComponent } from '../social/social.component';
   imports: [CommonModule, SocialsComponent, SvgHeaderComponent],
 })
 export class HeaderComponent implements OnInit {
-  @Input() fullHeader = true;
-  title = '< ng />';
-
   constructor() {}
 
   ngOnInit(): void {}
