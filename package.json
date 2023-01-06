@@ -25,6 +25,7 @@
     "@scullyio/ng-lib": "^2.1.36",
     "@scullyio/scully": "^2.1.36",
     "@scullyio/scully-plugin-puppeteer": "^2.1.36",
+    "@tailwindcss/typography": "^0.5.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
