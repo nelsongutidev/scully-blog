@@ -1,1 +1,49 @@
-[{"route":"/"},{"route":"/blog"},{"route":"/blog/everysome","title":"The every() and some() Array Methods in JS The Unpopular Pair","date":"March, 2019","published":true,"description":"Two usually forgotten yet handy methods to keep in your bag of tricks","tags":"Javascript, FP, Methods","sourceFile":"everysome.md"},{"route":"/blog/first-post","title":"Angular material","description":"This would be teh first description","date":"Tue Aug 23 2022","tags":["Angular"],"published":true,"sourceFile":"first-post.md"},{"route":"/blog/fourth","title":"Explore the CDK","description":"In this post you will learn about the angular CDK","published":true,"sourceFile":"fourth.md"},{"route":"/blog/second-post","title":"second blog post","description":"This would be another desjkdjkdjld","date":"Tue Aug 23 2022","tags":["Angular","JavaScript"],"published":true,"sourceFile":"second-post.md"},{"route":"/blog/third","title":"blog title","description":"blog description","published":true,"arbitraryValue":"single value","arbitraryArray":["first item","second item"],"sourceFile":"third.md"},{"route":"/about"},{"route":"/tips"}]
+[
+  { "route": "/" },
+  { "route": "/blog" },
+  {
+    "route": "/blog/everysome",
+    "title": "The .every() and .some() methods - The Unpopular Pair",
+    "date": "March, 2019",
+    "published": true,
+    "description": "Two usually forgotten yet handy methods to keep in your bag of tricks",
+    "tags": "Javascript",
+    "sourceFile": "everysome.md"
+  },
+  {
+    "route": "/blog/first-post",
+    "title": "Angular material",
+    "description": "This would be teh first description",
+    "date": "Tue Aug 23 2022",
+    "tags": ["Angular"],
+    "published": true,
+    "sourceFile": "first-post.md"
+  },
+  {
+    "route": "/blog/fourth",
+    "title": "Explore the CDK",
+    "description": "In this post you will learn about the angular CDK",
+    "published": true,
+    "sourceFile": "fourth.md"
+  },
+  {
+    "route": "/blog/second-post",
+    "title": "second blog post",
+    "description": "This would be another desjkdjkdjld",
+    "date": "Tue Aug 23 2022",
+    "tags": ["Angular", "JavaScript"],
+    "published": true,
+    "sourceFile": "second-post.md"
+  },
+  {
+    "route": "/blog/third",
+    "title": "blog title",
+    "description": "blog description",
+    "published": true,
+    "arbitraryValue": "single value",
+    "arbitraryArray": ["first item", "second item"],
+    "sourceFile": "third.md"
+  },
+  { "route": "/about" },
+  { "route": "/tips" }
+]
