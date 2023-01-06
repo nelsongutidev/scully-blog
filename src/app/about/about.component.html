@@ -1,73 +1,70 @@
 <h1
-  class="text-4xl md:text-6xl xl:text-7xl font-bold tracking-tight md:p-12 p-6"
+  class="text-slate-800 text-4xl md:text-6xl tracking-tight md:px-24 md:py-12 px-6 pt-8"
 >
   About me
 </h1>
 <section class="">
-  <div
-    class="px-6 py-6 xl:my-12 md:px-12 text-gray-800 text-center xl:text-left"
-  >
+  <div class="px-6 py-6 xl:my-12 md:px-12 text-gray-800 xl:text-left">
     <div class="container mx-auto xl:px-24">
-      <div class="grid xl:grid-cols-2 gap-8 flex items-center">
-        <div class="">
-          <div class="flex flex-col space-y-6 flex items-center">
-            <h2 class="text-center font-normal">
-              Hi! I'm Nelson Gutiérrez, a software engineer from Costa Rica.
-            </h2>
+      <div class="grid xl:grid-cols-2 gap-8 flex">
+        <div class="flex flex-col space-y-6 flex">
+          <h2 class="text-3xl font-light">
+            Hi! I'm Nelson Gutiérrez, a software engineer from Costa Rica.
+          </h2>
 
-            <h3 class="">Here's a few things about me:</h3>
+          <h3 class="font-light">Here's a few things about me:</h3>
 
-            <ul class="list-disc pl-4 text-left text-base space-y-2 font-light">
-              <li>
-                I'm currently working as a Senior Software Engineer at
+          <ul class="list-disc pl-4 text-left text-base space-y-2 font-light">
+            <li>
+              I'm currently working as a Senior Software Engineer at
 
-                <a
-                  href="https://www.herodevs.com/"
-                  class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              <a
+                href="https://www.herodevs.com/"
+                class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                HeroDevs
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  HeroDevs
-                  <svg
-                    aria-hidden="true"
-                    class="w-5 h-5 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg> </a
-                >.
-              </li>
-              <li>
-                I have {{ yearsOfExperience }} years of experience in the
-                software industry.
-              </li>
-              <li>
-                I'm also a big fan of open source software, and I'm always
-                looking for new ways to contribute to the community.
-              </li>
-              <li>
-                Passionate about the Angular framework, my initials are
-                {{ initials }} after all.
-              </li>
-              <li>
-                Some of my hobbies are playing piano and guitar, running, soccer
-                and watching NBA games 🏀.
-              </li>
-              <li>
-                I love spending time with my family, and I'm also a big fan of
-                traveling.
-              </li>
-            </ul>
-          </div>
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg> </a
+              >.
+            </li>
+            <li>
+              I have {{ yearsOfExperience }} years of experience in the software
+              industry.
+            </li>
+            <li>
+              I'm also a big fan of open source software, and I'm always looking
+              for new ways to contribute to the community.
+            </li>
+            <li>
+              Passionate about the Angular framework, my initials are
+              {{ initials }} after all.
+            </li>
+            <li>
+              Some of my hobbies are playing piano and guitar, running, soccer
+              and watching NBA games 🏀.
+            </li>
+            <li>
+              I love spending time with my family, and I'm also a big fan of
+              traveling.
+            </li>
+          </ul>
         </div>
+
         <div class="flex align-center justify-center">
           <img
             src="/assets/images/family.jpeg"
-            class="w-80 rounded-lg shadow-lg"
+            class="w-80 max-h-fit rounded-lg shadow-lg"
             alt=""
           />
         </div>

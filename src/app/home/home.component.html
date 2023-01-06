@@ -1,3 +1,38 @@
 <div class="flex flex-col">
   <app-header></app-header>
+  <div class="max-w-xl mb-6 mx-auto text-center px-2">
+    <app-socials></app-socials>
+    <div class="flex-1 md:mr-10">
+      <h1 class="font-pt-serif text-5xl font-bold mb-7">
+        Hi, I'm Nelson Gutierrez
+      </h1>
+      <p class="font-pt-serif text-2xl mb-7">
+        Front End Development, Angular, RxJS and Javascript
+      </p>
+      <div class="font-montserrat">
+        <button
+          routerLink="/blog"
+          routerLinkActive="active"
+          class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2"
+        >
+          Blog
+        </button>
+        <button
+          routerLink="/about"
+          routerLinkActive="active"
+          class="px-6 py-4 border-2 border-black border-solid rounded-lg"
+        >
+          About me
+        </button>
+      </div>
+    </div>
+
+    <div class="flex mt-10 flex justify-center">
+      <img
+        src="/assets/images/me.jpeg"
+        class="md:w-64 w-48 h-auto rounded"
+        alt=""
+      />
+    </div>
+  </div>
 </div>

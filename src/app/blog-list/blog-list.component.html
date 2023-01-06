@@ -1,29 +1,45 @@
 <h1
-  class="text-4xl md:text-6xl xl:text-7xl font-bold tracking-tight md:p-12 p-6"
+  class="text-slate-800 text-4xl md:text-6xl tracking-tight md:px-12 md:py-12 px-6 pt-8"
 >
   Blog
 </h1>
-<div class="w-full flex flex-col gap-8" *ngIf="posts$ | async as posts">
-  <ng-container *ngFor="let post of posts">
-    <div
-      class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md w-full self-center"
-    >
-      <div class="flex justify-end items-center">
-        <span class="font-light text-gray-600">{{ post.date }}</span>
-      </div>
-      <div class="mt-2">
-        <a
-          class="text-3xl text-gray-700 font-bold hover:underline"
-          [routerLink]="post.route"
-          >{{ post.title }}</a
-        >
-        <p class="mt-2 text-gray-600">{{ post.description }}</p>
-      </div>
-      <div class="flex justify-between items-center mt-4">
-        <a class="text-blue-500 hover:underline" [routerLink]="post.route"
-          >Read more</a
-        >
-      </div>
+
+<section class="text-gray-600 body-font overflow-hidden">
+  <div class="container px-12 mx-auto">
+    <div class="-my-8 divide-y-2 divide-gray-100">
+      <ng-container *ngFor="let post of posts$ | async">
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+            <span class="font-semibold title-font text-gray-700">Angular</span>
+            <span class="mt-1 text-gray-500 text-sm">{{ post.date }}</span>
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+              <a [routerLink]="post.route">{{ post.title }}</a>
+            </h2>
+            <p class="leading-relaxed">
+              {{ post.description }}
+            </p>
+            <a
+              [routerLink]="post.route"
+              class="text-indigo-500 inline-flex items-center mt-4"
+              >Read
+              <svg
+                class="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </ng-container>
     </div>
-  </ng-container>
-</div>
+  </div>
+</section>
