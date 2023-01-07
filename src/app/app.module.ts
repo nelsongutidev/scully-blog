@@ -6,6 +6,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularLogoComponent } from './shared/components/angular-logo/angular-logo.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     ScullyLibModule,
     SidenavComponent,
     AngularLogoComponent,
+    FooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AngularLogoComponent } from '../angular-logo/angular-logo.component';
 import { SidenavItemComponent } from '../sidenav-item/sidenav-item.component';
 import { SocialsComponent } from '../social/social.component';
+import { SvgSitenameAnimationComponent } from '../svg-sitename-animation/svg-sitename-animation.component';
 
 type NavItem = {
   label: string;
