@@ -1,2 +1,11 @@
 identifier: l78e39pe88qb51v8
 appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: blog
+homeFolder: /Users/nelsongutierrez/Documents/Personal Blog/scully-blog
+distFolder: ./dist/blog
+outDir: /Users/nelsongutierrez/Documents/Personal Blog/scully-blog/dist/static
+handle404: ''
+allowErrorCollect: true

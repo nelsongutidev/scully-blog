@@ -1,12 +1,12 @@
 ---
-title: The .every() and .some() methods - The Unpopular Pair
-date: March, 2019
+title: "The .every() and .some() methods: The Unpopular Pair"
+date: "March, 2019"
 published: true
-description: Two usually forgotten yet handy methods to keep in your bag of tricks
-tags: Javascript
+description: "Two usually forgotten yet handy methods to keep in your bag of tricks"
+tags: ["Javascript"]
 ---
 
-# The every() and some() Array Methods in JS The Unpopular Pair
+# The .every() and .some() Array Methods in JS: The Unpopular Pair
 
 When ES5 came out, many handy methods were introduced such as forEach, map, reduce and filter. The .every() and .some() were also introduced back then but are not as popular. I will share with you what they can do for you with some practical examples.
 

@@ -1,22 +1,22 @@
 ---
-title: Angular material
-description: "This would be teh first description"
+title: "Markdown test"
+description: "This is a sample post containing different types of markdown content to test"
 date: "Tue Aug 23 2022"
-tags: ["Angular"]
+tags: ["Markdown"]
 published: true
 ---
 
 # Angular material
 
-Heyyyyyy
+Title - Header 1
 
 ## sub title
 
-hdjhks
+Header 2
 
 ## another vblock
 
-sndsjdks
+Table
 
 | Syntax    | Description |
 | --------- | ----------- |
@@ -30,7 +30,7 @@ sndsjdks
 
 ~~The world is flat.~~
 
-> hey
+> Example
 
 ```html
 <h1>nelson</h1>
@@ -67,13 +67,13 @@ h1 {
 const language = "typescript";
 ```
 
-### Lists
+## Lists
 
 1. Ordered list
 2. Another bullet point
    - Unordered list
    - Another unordered bullet
 
-### Blockquote
+## Blockquote
 
 > Blockquote to the max
