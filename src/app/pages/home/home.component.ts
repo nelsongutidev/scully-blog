@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SocialsComponent } from '../shared/components/social/social.component';
+import { SocialsComponent } from '../../shared/components/social/social.component';
 
 @Component({
   selector: 'app-home',
