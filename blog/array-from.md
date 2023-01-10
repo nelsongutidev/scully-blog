@@ -2,7 +2,7 @@
 title: "Awesome things that can be done with Array.from()"
 date: "2019-01-27T08:40:32.169Z"
 published: true
-tags: ["Javascript"]
+tags: ["Javascript", "Array"]
 description: "Array.from() is an awesome method introduced with ES6. This post includes practical examples of how I use it."
 ---
 

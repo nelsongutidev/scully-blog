@@ -11,10 +11,16 @@
         <div class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="flex-grow">
             <div class="flex justify-between mb-2">
-              <span class="font-semibold title-font text-gray-700"
-                >Angular</span
-              >
-              <span class="mt-1 text-gray-500 text-sm">{{ post.date }}</span>
+              <div class="flex space-x-1">
+                <span
+                  *ngFor="let tag of post.tags; last as isLast"
+                  class="font-semibold title-font text-gray-700"
+                  >{{ tag }} <span *ngIf="!isLast">|</span>
+                </span>
+              </div>
+              <span class="mt-1 text-gray-500 text-sm">{{
+                post.date | date
+              }}</span>
             </div>
             <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
               <a [routerLink]="post.route">{{ post.title }}</a>

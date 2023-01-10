@@ -3,7 +3,7 @@ title: "The .every() and .some() methods: The Unpopular Pair"
 date: "March, 2019"
 published: true
 description: "Two usually forgotten yet handy methods to keep in your bag of tricks"
-tags: ["Javascript"]
+tags: ["Javascript", "Array"]
 ---
 
 # The .every() and .some() Array Methods in JS: The Unpopular Pair

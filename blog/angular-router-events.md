@@ -2,7 +2,7 @@
 title: "Navigating Angular Router Events: The Sweet Sixteen"
 description: "Angular's built-in router provides 16 router events to track its lifecycle"
 date: "Tue Aug 23 2022"
-tags: ["Angular", "JavaScript"]
+tags: ["Angular"]
 published: true
 ---
 

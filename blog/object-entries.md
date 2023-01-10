@@ -1,13 +1,13 @@
 ---
-title: "ES10 Object.fromEntries"
+title: "ES10 Object.fromEntries()"
 date: "September, 2019"
 published: true
 category: "Javascript"
-tags: ["Javascript"]
-description: "Object.fromEntries is here and this is why its awesome"
+tags: ["Javascript", "Objects"]
+description: "Object.fromEntries() is here and this is why its awesome"
 ---
 
-# Object.fromEntries
+# Object.fromEntries()
 
 ES2019/ES10 brings what I think is one of the most expected built in methods: Object.fromEntries.
 
