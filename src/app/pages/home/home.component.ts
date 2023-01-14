@@ -11,8 +11,5 @@ import { SocialsComponent } from '../../shared/components/social/social.componen
   imports: [CommonModule, SocialsComponent, RouterModule],
 })
 export class HomeComponent implements OnInit {
-  open = false;
-  constructor() {}
-
   ngOnInit() {}
 }

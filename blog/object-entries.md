@@ -1,9 +1,8 @@
 ---
 title: "ES10 Object.fromEntries()"
-date: "September, 2019"
+date: "September 1, 2019"
 published: true
-category: "Javascript"
-tags: ["Javascript", "Objects"]
+tags: ["JavaScript", "Objects"]
 description: "Object.fromEntries() is here and this is why its awesome"
 ---
 

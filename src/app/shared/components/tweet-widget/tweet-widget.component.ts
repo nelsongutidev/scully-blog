@@ -1,18 +1,8 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TweetWidgetService } from 'src/app/services/tweet-widget.service';
 
-export class TweetOption {
-  id?: string;
-  cards?: string;
-  conversation?: string;
-  theme?: string;
-  width?: string;
-  align?: string;
-  lang?: string;
-  dnt?: boolean;
-}
-
+import { ActivatedRoute } from '@angular/router';
+import { Tweet, TWEETS } from '../../constants/tweets';
 @Component({
   selector: 'app-tweet-widget',
   standalone: true,
@@ -21,47 +11,16 @@ export class TweetOption {
   styles: [],
 })
 export class TweetWidgetComponent {
-  @Input() tweetId = '';
-  options: TweetOption | object = {};
-  @ViewChild('element', { static: true }) element: ElementRef | undefined;
+  tweet!: Tweet | undefined;
 
-  private attr: string = 'twElement';
-  private scriptAttr: string | any = 'twttr';
-  private error: boolean = false;
-  constructor(
-    // private element: ElementRef,
-    public widgetService: TweetWidgetService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
-  async ngAfterViewInit() {
-    await this.loadScript();
-    this.loadWidget();
+  ngOnInit() {
+    this.setCurrentTweet();
   }
 
-  async loadWidget() {
-    this.widgetService.loadElement(
-      'createTweet',
-      this.tweetId,
-      this.element as any,
-      this.options,
-      (response: object) => {
-        console.log('onload');
-      }
-    );
-  }
-
-  private async loadScript() {
-    return new Promise((resolve, reject) => {
-      this.widgetService
-        .load(this.scriptAttr)
-        .then((data) => {
-          resolve(true);
-          console.log('Script loaded successfully,');
-        })
-        .catch((err) => {
-          reject();
-          console.log('Script load issue,');
-        });
-    });
+  setCurrentTweet() {
+    const currentTweetId = this.route.snapshot.paramMap.get('tweetId') || '';
+    this.tweet = TWEETS.find(({ tweetId }) => tweetId === currentTweetId);
   }
 }

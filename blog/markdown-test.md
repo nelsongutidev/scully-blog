@@ -1,9 +1,12 @@
 ---
-title: "Markdown test"
-description: "This is a sample post containing different types of markdown content to test"
-date: "Tue Aug 23 2022"
-tags: ["Markdown"]
-published: true
+title: 'Markdown test'
+description: 'This is a sample post containing different types of markdown content to test'
+date: 'Tue Aug 23 2022'
+tags:
+    - Markdown
+published: false
+slugs:
+    - ___UNPUBLISHED___lctpmiyz_TzBvgBaUWTq3OyuKczOUjmclrGJ5if9J
 ---
 
 # Angular material

@@ -6,6 +6,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TipsComponent } from './pages/tips/tips.component';
 
+import { TweetWidgetComponent } from './shared/components/tweet-widget/tweet-widget.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +28,10 @@ const routes: Routes = [
   {
     path: 'tips',
     component: TipsComponent,
+  },
+  {
+    path: 'tips/:tweetId',
+    component: TweetWidgetComponent,
   },
 ];
 

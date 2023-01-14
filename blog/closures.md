@@ -1,8 +1,8 @@
 ---
 title: "Closures Explained with a Practical Example"
-date: "April, 2019"
+date: "April 3, 2019"
 published: true
-tags: ["Javascript"]
+tags: ["JavaScript"]
 description: "While studying for a Javascript interview, a ran into a challenge that helped me understand closures."
 ---
 

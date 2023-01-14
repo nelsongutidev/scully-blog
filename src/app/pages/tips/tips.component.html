@@ -31,12 +31,8 @@
 
 <main class="md:py-8 flex flex-wrap justify-center gap-6 mb-6">
   <ng-container *ngFor="let tweet of tweets">
-    <app-tweet-card class="px-4" [tweet]="tweet"></app-tweet-card>
+    <a [routerLink]="tweet.tweetId" [state]="tweet">
+      <app-tweet-card class="px-4" [tweet]="tweet"></app-tweet-card>
+    </a>
   </ng-container>
 </main>
-
-<!-- <div>
-  <ng-container *ngFor="let tweet of tweets">
-    <app-tweet-widget [tweetId]="tweet.tweetId"></app-tweet-widget>
-  </ng-container>
-</div> -->
