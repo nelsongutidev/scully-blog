@@ -7,5 +7,5 @@ projectName: blog
 homeFolder: /Users/nelsongutierrez/Documents/Personal Blog/scully-blog
 distFolder: ./dist/blog
 outDir: /Users/nelsongutierrez/Documents/Personal Blog/scully-blog/dist/static
-handle404: ''
+handle404: "index"
 allowErrorCollect: true
