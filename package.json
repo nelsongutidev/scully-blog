@@ -34,6 +34,7 @@
     "@angular-devkit/build-angular": "^15.0.3",
     "@angular/cli": "~15.0.3",
     "@angular/compiler-cli": "^15.0.3",
+    "@gammastream/scully-plugin-http404": "^1.0.4",
     "@types/jasmine": "~4.0.0",
     "autoprefixer": "^10.4.12",
     "jasmine-core": "~4.3.0",
