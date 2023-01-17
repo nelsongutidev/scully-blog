@@ -55,6 +55,17 @@ export const TWEETS: Tweet[] = [
     tweetId: '1587470353831542784',
     tags: ['Angular'],
   },
+  {
+    title: 'keyvalue',
+    description:
+      'The keyvalue pipe allows to iterate over an object and get the key and value of each property.',
+    src: 'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=large',
+    alt: 'keyvalue pipe code snippet',
+    tweetId: '1615427403152560156',
+    tags: ['Angular'],
+  },
 
   //   {
   //     title: 'Destructuring',
