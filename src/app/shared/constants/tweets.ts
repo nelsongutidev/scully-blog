@@ -56,9 +56,9 @@ export const TWEETS: Tweet[] = [
     tags: ['Angular'],
   },
   {
-    title: 'keyvalue',
+    title: 'KeyValuePipe',
     description:
-      'The keyvalue pipe allows to iterate over an object and get the key and value of each property.',
+      'Angular provides the keyvalue pipe, which transforms an Object or Map into an array of key value pairs. With it, an Object or a Map can be iterated by *ngFor',
     src: 'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=small',
     srcLarge:
       'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=large',
