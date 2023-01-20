@@ -22,6 +22,10 @@ Any change on the angular app needs a new ng build for the scully server to pick
 
 If you create a new .md file or updated it, make sure you run `npm run scully -- --scanRoutes` so that scully can find the new routes and add them.
 
+## Can I use this project
+
+Feel free to use this code. Create your own blog, or your own site and style it however you like and ship it 🚀
+
 ## MIT License
 
 Copyright (c) 20123 Nelson Gutierrez and others
