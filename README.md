@@ -24,7 +24,7 @@ If you create a new .md file or updated it, make sure you run `npm run scully --
 
 ## Can I use this project
 
-Feel free to use this code. Create your own blog, or your own site and style it however you like and ship it 🚀
+Feel free to use this code. Create your own blog, or your own site and style it however you like and ship it 🚀. Just try to make it your own 😉.
 
 ## MIT License
 
