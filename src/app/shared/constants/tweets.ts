@@ -10,6 +10,28 @@ export type Tweet = {
 
 export const TWEETS: Tweet[] = [
   {
+    title: 'KeyValuePipe',
+    description:
+      'Angular provides the keyvalue pipe, which transforms an Object or Map into an array of key value pairs. With it, an Object or a Map can be iterated by *ngFor',
+    src: 'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=large',
+    alt: 'keyvalue pipe code snippet',
+    tweetId: '1615427403152560156',
+    tags: ['Angular'],
+  },
+  {
+    title: 'ngNativeValidate',
+    description:
+      'If you want to explicitly enable native DOM validation UI with Angular forms, you can add the ngNativeValidate attribute to the <form> element',
+    src: 'https://pbs.twimg.com/media/Fj3YreaVUAAhv-f?format=jpg&name=medium',
+    srcLarge:
+      'https://pbs.twimg.com/media/Fj3YreaVUAAhv-f?format=jpg&name=large',
+    alt: 'ngNativeValidate code snippet',
+    tweetId: '1602677014137282560',
+    tags: ['Angular'],
+  },
+  {
     title: 'ngPlural',
     description:
       'In order to make pluralization easier, Angular provides the ngPlural Directive which allows to display a particular template on a given value.',
@@ -33,18 +55,6 @@ export const TWEETS: Tweet[] = [
   },
 
   {
-    title: 'ngNativeValidate',
-    description:
-      'If you want to explicitly enable native DOM validation UI with Angular forms, you can add the ngNativeValidate attribute to the <form> element',
-    src: 'https://pbs.twimg.com/media/Fj3YreaVUAAhv-f?format=jpg&name=medium',
-    srcLarge:
-      'https://pbs.twimg.com/media/Fj3YreaVUAAhv-f?format=jpg&name=large',
-    alt: 'ngNativeValidate code snippet',
-    tweetId: '1602677014137282560',
-    tags: ['Angular'],
-  },
-
-  {
     title: 'ariaCurrentWhenActive',
     description:
       'The RouterLinkActive directive provides the ariaCurrentWhenActive input which sets the aria-current to a specified value when the link becomes active.',
@@ -53,17 +63,6 @@ export const TWEETS: Tweet[] = [
       'https://pbs.twimg.com/media/FgfS-I6VIAA-YzC?format=jpg&name=large',
     alt: 'ariaCurrentWhenActive code snippet',
     tweetId: '1587470353831542784',
-    tags: ['Angular'],
-  },
-  {
-    title: 'KeyValuePipe',
-    description:
-      'Angular provides the keyvalue pipe, which transforms an Object or Map into an array of key value pairs. With it, an Object or a Map can be iterated by *ngFor',
-    src: 'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=small',
-    srcLarge:
-      'https://pbs.twimg.com/media/FmsmP43akAAi765?format=jpg&name=large',
-    alt: 'keyvalue pipe code snippet',
-    tweetId: '1615427403152560156',
     tags: ['Angular'],
   },
 
