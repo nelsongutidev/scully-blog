@@ -29,7 +29,7 @@
   me if you want to see more of them.
 </p>
 
-<main class="md:py-8 flex flex-wrap justify-center gap-6 mb-6">
+<main class="md:py-8 flex flex-wrap justify-center gap-6 mb-6 px-4">
   <ng-container *ngFor="let tweet of tweets">
     <a [routerLink]="tweet.tweetId" [state]="tweet">
       <app-tweet-card class="px-4" [tweet]="tweet"></app-tweet-card>

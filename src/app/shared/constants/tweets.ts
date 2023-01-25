@@ -10,6 +10,17 @@ export type Tweet = {
 
 export const TWEETS: Tweet[] = [
   {
+    title: 'Wildcard Routes',
+    description:
+      'To display a 404 page, Angular provides the possibility of adding a wildcard route',
+    src: 'https://pbs.twimg.com/media/FnQ5z_eaMAAD-kj?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/FnQ5z_eaMAAD-kj?format=jpg&name=large',
+    alt: 'Wildcard Routes code snippet',
+    tweetId: '1617982361727283201',
+    tags: ['Angular'],
+  },
+  {
     title: 'KeyValuePipe',
     description:
       'Angular provides the keyvalue pipe, which transforms an Object or Map into an array of key value pairs. With it, an Object or a Map can be iterated by *ngFor',

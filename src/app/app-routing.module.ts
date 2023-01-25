@@ -13,10 +13,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    title: 'Nelson Gutiérrez',
   },
   {
     path: 'blog',
     component: BlogListComponent,
+    title: 'Blog',
   },
   {
     path: 'blog/:slug',
@@ -25,10 +27,12 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    title: 'About',
   },
   {
     path: 'tips',
     component: TipsComponent,
+    title: 'Tips',
   },
   {
     path: 'tips/:tweetId',
