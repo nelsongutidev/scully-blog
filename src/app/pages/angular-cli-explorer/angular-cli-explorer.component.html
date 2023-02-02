@@ -1,0 +1,35 @@
+<h1
+  class="text-slate-800 text-4xl md:text-6xl tracking-tight md:px-24 md:py-12 px-6 pt-8"
+>
+  Angular CLI Explorer
+</h1>
+
+<h4 class="md:px-24 px-6 my-4 text-xl">I want to:</h4>
+<div class="md:px-24 px-6 flex gap-x-4">
+  <mat-form-field class="w-64" appearance="outline">
+    <!-- <mat-label>I want to:</mat-label> -->
+    <mat-select [formControl]="primaryOption">
+      <mat-option *ngFor="let action of primaryOptions" [value]="action.value">
+        {{ action.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="primaryOption.value" class="w-64" appearance="outline">
+    <!-- <mat-label>I want to:</mat-label> -->
+    <mat-select [formControl]="secondaryOption">
+      <mat-option
+        *ngFor="let action of secondaryOptions?.[primaryOption.value]"
+        [value]="action"
+      >
+        {{ action.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<section class="flex flex-col items-center mt-4">
+  <div class="w-full max-w-3xl px-4">
+    <app-terminal [command]="(command$ | async) || ''"></app-terminal>
+  </div>
+</section>
