@@ -10,6 +10,17 @@ export type Tweet = {
 
 export const TWEETS: Tweet[] = [
   {
+    title: 'bootstrapApplication API',
+    description:
+      'As of Angular v15, you can Bootstrap an Angular application using a standalone component',
+    src: 'https://pbs.twimg.com/media/FnxUYEVaYAA6QwL?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/FnxUYEVaYAA6QwL?format=jpg&name=large',
+    alt: 'bootstrapApplication code snippet',
+    tweetId: '1620451972808687616',
+    tags: ['Angular'],
+  },
+  {
     title: 'Wildcard Routes',
     description:
       'To display a 404 page, Angular provides the possibility of adding a wildcard route',
