@@ -39,11 +39,11 @@ const routes: Routes = [
     path: 'tips/:tweetId',
     component: TweetWidgetComponent,
   },
-  // {
-  //   path: 'angular-cli-explorer',
-  //   component: AngularCliExplorerComponent,
-  //   title: 'Angular CLI Explorer',
-  // },
+  {
+    path: 'angular-cli-explorer',
+    component: AngularCliExplorerComponent,
+    title: 'Angular CLI Explorer',
+  },
   {
     path: '**',
     component: PageNotFoundComponent,

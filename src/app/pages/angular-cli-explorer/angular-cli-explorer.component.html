@@ -1,25 +1,37 @@
 <h1
-  class="text-slate-800 text-4xl md:text-6xl tracking-tight md:px-24 md:py-12 px-6 pt-8"
+  class="text-slate-800 text-4xl lg:text-6xl tracking-tight lg:px-24 md:py-12 px-6 py-6"
 >
   Angular CLI Explorer
 </h1>
 
-<h4 class="md:px-24 px-6 my-4 text-xl">I want to:</h4>
-<div class="md:px-24 px-6 flex gap-x-4">
-  <mat-form-field class="w-64" appearance="outline">
-    <!-- <mat-label>I want to:</mat-label> -->
-    <mat-select [formControl]="primaryOption">
-      <mat-option *ngFor="let action of primaryOptions" [value]="action.value">
-        {{ action.label }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+<h4 class="lg:px-24 px-6 text-xl mb-4">I want to:</h4>
+<div class="lg:px-24 px-6 flex flex-col gap-x-4">
+  <div class="xl:max-w-lg w-full">
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label>Command</mat-label>
+      <mat-select [formControl]="primaryOption">
+        <mat-option *ngFor="let action of primaryOptions" [value]="action">
+          {{ action.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <mat-icon
+      *ngIf="primaryOption.value?.description"
+      fontIcon="info"
+      [matTooltip]="primaryOption.value?.description || ''"
+      matTooltipPosition="right"
+    ></mat-icon> -->
+  </div>
 
-  <mat-form-field *ngIf="primaryOption.value" class="w-64" appearance="outline">
-    <!-- <mat-label>I want to:</mat-label> -->
+  <mat-form-field
+    *ngIf="secondaryOptions?.[primaryOption.value?.value]"
+    class="xl:max-w-lg w-full"
+    appearance="fill"
+  >
+    <mat-label>Sub-commands</mat-label>
     <mat-select [formControl]="secondaryOption">
       <mat-option
-        *ngFor="let action of secondaryOptions?.[primaryOption.value]"
+        *ngFor="let action of secondaryOptions?.[primaryOption.value?.value]"
         [value]="action"
       >
         {{ action.label }}
