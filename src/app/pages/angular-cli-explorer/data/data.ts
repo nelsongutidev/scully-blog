@@ -1,20 +1,32 @@
-export interface PrimaryOption {
+export type Command = {
   value: string;
   label: string;
   description?: string;
   command?: string;
-}
+};
 
-interface Command {
+type SubCommand = {
   [key: string]: Array<{
     value: string;
     label: string;
     command: string;
     description?: string;
   }>;
-}
+};
 
-export const PRIMARY_OPTIONS: PrimaryOption[] = [
+type Option = {
+  [key: string]: Array<{
+    value: string;
+    description?: string;
+    type?: any;
+    default?: any;
+    aliases?: any;
+    command?: string;
+    options?: string[];
+  }>;
+};
+
+export const COMMAND: Command[] = [
   {
     value: 'new',
     label: 'create a new Angular workspace (brand new project)',
@@ -35,8 +47,8 @@ export const PRIMARY_OPTIONS: PrimaryOption[] = [
   // },
   {
     value: 'build',
-    label: 'build my project',
-    command: 'ng build or ng b',
+    label: 'compile my Angular app or library into an output directory',
+    command: 'ng build',
     description:
       'Compiles an Angular application or library into an output directory named dist/ at the given output path.',
   },
@@ -137,7 +149,7 @@ export const PRIMARY_OPTIONS: PrimaryOption[] = [
   },
 ];
 
-export const SECONDARY_OPTIONS: Command = {
+export const SUB_COMMAND: SubCommand = {
   generate: [
     {
       value: 'app-shell',
@@ -236,6 +248,265 @@ export const SECONDARY_OPTIONS: Command = {
       value: 'serve',
       label: 'serve my app',
       command: 'ng serve',
+    },
+  ],
+};
+
+export const OPTIONS: Option = {
+  add: [
+    {
+      value: '--defaults',
+      description:
+        'disable interactive input prompts for options with a default',
+      type: 'boolean',
+      default: false,
+      command: 'add',
+    },
+    {
+      value: '--dry-run',
+      description:
+        'run through and report activity without writing out results',
+      type: 'boolean',
+      default: false,
+      command: 'add',
+    },
+    {
+      value: '--force',
+      description: 'force overwriting of existing files',
+      type: 'boolean',
+      default: false,
+      command: 'add',
+    },
+    {
+      value: '--help',
+      description: 'show a help message for this command in the console',
+      type: 'boolean',
+      command: 'add',
+    },
+    {
+      value: '--interactive',
+      description: 'enable interactive input prompts',
+      type: 'boolean',
+      default: true,
+      command: 'add',
+    },
+    {
+      value: '--registry <npm-registry>',
+      description: 'with an specific NPM registry ',
+      type: 'string',
+      command: 'add',
+    },
+    {
+      value: '--skip-confirmation',
+      description:
+        'skip asking a confirmation prompt before installing and executing the package',
+      type: 'boolean',
+      default: false,
+      command: 'add',
+    },
+    {
+      value: '--verbose',
+      description:
+        'display additional details about internal operations during execution',
+      type: 'boolean',
+      default: false,
+      command: 'add',
+    },
+  ],
+
+  doc: [
+    {
+      value: '--help',
+      description: 'show a help message for this command in the console',
+      type: 'boolean',
+    },
+    {
+      value: '--search',
+      description:
+        'search all of angular.io (otherwise, searches only API reference documentation)',
+      type: 'boolean',
+      aliases: '-s',
+      command: 'doc',
+    },
+    {
+      value: '--version <version>',
+      description:
+        'with an specific version of Angular to use for the documentation',
+      type: 'string',
+      command: 'doc',
+    },
+  ],
+  new: [
+    {
+      value: '--collection <schematics-collection>',
+      aliases: ['-c'],
+      type: 'string',
+      description:
+        'collection of schematics to use in generating the initial application',
+      command: 'new',
+    },
+    {
+      value: '--commit',
+      aliases: [],
+      type: 'boolean',
+      description: 'with initial git repository commit information',
+      default: true,
+      command: 'new',
+    },
+    // {
+    //   value: '--create-application',
+    //   aliases: [],
+    //   type: 'boolean',
+    //   description:
+    //     "create a new initial application project in the 'src' folder of the new workspace. When false, creates an empty workspace with no initial application. You can then use the generate application command so that all applications are created in the projects folder.",
+    //   default: true,
+    //   command: 'new',
+    // },
+    {
+      value: '--defaults',
+      aliases: [],
+      type: 'boolean',
+      description:
+        'disable interactive input prompts for options with a default',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: '--directory <directory-name>',
+      aliases: [],
+      type: 'string',
+      description: 'directory name to create the workspace in',
+      command: 'new',
+    },
+    {
+      value: '--dry-run',
+      aliases: [],
+      type: 'boolean',
+      description:
+        'run through and report activity without writing out results',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: '--force',
+      aliases: [],
+      type: 'boolean',
+      description: 'force overwriting of existing files',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: '--help',
+      aliases: [],
+      type: 'boolean',
+      description: 'show a help message for this command in the console',
+      command: 'new',
+    },
+    {
+      value: '--inline-style',
+      aliases: ['-s'],
+      type: 'boolean',
+      description: 'include styles inline in the component TS file',
+      command: 'new',
+    },
+    {
+      value: '--inline-template',
+      aliases: ['-t'],
+      type: 'boolean',
+      description: 'include template inline in the component TS file',
+      command: 'new',
+    },
+    {
+      value: '--interactive',
+      aliases: [],
+      type: 'boolean',
+      description: 'enable interactive input prompts.',
+      default: true,
+      command: 'new',
+    },
+    {
+      value: '--minimal',
+      aliases: [],
+      type: 'boolean',
+      description: 'create a workspace without any testing frameworks',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: '--new-project-root <path>',
+      aliases: [],
+      type: 'string',
+      description:
+        'path where new projects will be created, relative to the new workspace',
+      command: 'new',
+    },
+
+    {
+      value: 'package-manager <npm | yarn | pnpm | cnpm>',
+      description: 'The package manager used to install dependencies.',
+      options: ['npm', 'yarn', 'pnpm', 'cnpm'],
+      type: 'string',
+      command: 'new',
+    },
+    {
+      value: 'prefix <prefix>',
+      description:
+        'prefix to apply to generated selectors for the initial project',
+      aliases: ['-p'],
+      type: 'string',
+      default: 'app',
+      command: 'new',
+    },
+    {
+      value: 'routing',
+      description: 'generating a routing module for the initial project.',
+      type: 'boolean',
+      command: 'new',
+    },
+    {
+      value: 'skip-git',
+      description: 'without initializing a git repository.',
+      aliases: ['-g'],
+      type: 'boolean',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: 'skip-install',
+      description: 'without installing dependency packages',
+      type: 'boolean',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: 'skip-tests',
+      description:
+        "without generating 'spec.ts' test files for the new project",
+      aliases: ['-S'],
+      type: 'boolean',
+      default: false,
+      command: 'new',
+    },
+    {
+      value: 'strict',
+      description:
+        'create a workspace with stricter type checking and stricter bundle budgets settings',
+      default: true,
+      command: 'new',
+    },
+    {
+      value: 'style <css | scss | sass | less>',
+      description: 'file extension or preprocessor to use for style files.',
+      options: ['css', 'scss', 'sass', 'less'],
+      type: 'string',
+      command: 'new',
+    },
+    {
+      value: 'view-encapsulation <Emulated | None | ShadowDom>',
+      description: 'view encapsulation strategy to use in the initial project.',
+      options: ['Emulated', 'None', 'ShadowDom'],
+      type: 'string',
+      command: 'new',
     },
   ],
 };

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TerminalComponent } from 'src/app/shared/components/terminal/terminal.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { PrimaryOption, PRIMARY_OPTIONS, SECONDARY_OPTIONS } from './data/data';
+import { Command, COMMAND, SUB_COMMAND, OPTIONS } from './data/data';
 import {
   combineLatest,
   map,
@@ -32,33 +32,39 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class AngularCliExplorerComponent {
   primaryOption = new FormControl();
   secondaryOption = new FormControl();
+  tertiaryOption = new FormControl();
 
-  primaryOptions = PRIMARY_OPTIONS;
-  secondaryOptions = SECONDARY_OPTIONS;
+  primaryOptions = COMMAND;
+  secondaryOptions = SUB_COMMAND;
+  tertiaryOptions = OPTIONS;
 
-  primaryOption$: Observable<PrimaryOption | undefined> =
+  primaryOption$: Observable<Command | undefined> =
     this.primaryOption.valueChanges.pipe(
       map((value: string) =>
-        PRIMARY_OPTIONS.find((option: PrimaryOption) => option.value === value)
+        COMMAND.find((option: Command) => option.value === value)
       )
     );
 
   command$: Observable<string> = combineLatest(
     this.primaryOption.valueChanges.pipe(startWith(null)),
-    this.secondaryOption.valueChanges.pipe(startWith(null))
+    this.secondaryOption.valueChanges.pipe(startWith(null)),
+    this.tertiaryOption.valueChanges.pipe(startWith(null))
   ).pipe(
-    map(([primaryOption, secondaryOption]) => {
-      console.log('primary: ', primaryOption);
-      console.log('secondaryOption: ', secondaryOption);
+    map(([primaryOption, secondaryOption, tertiaryOption]) => {
+      const optionSelected =
+        tertiaryOption && primaryOption.value === tertiaryOption.command
+          ? tertiaryOption.value
+          : '';
+
       if (primaryOption?.command) {
-        return primaryOption.command;
+        return optionSelected
+          ? primaryOption.command + ' ' + optionSelected
+          : primaryOption.command;
       }
 
-      return secondaryOption?.command || '';
+      return secondaryOption?.command;
     })
   );
 
-  ngOnInit() {
-    console.log('init');
-  }
+  ngOnInit() {}
 }
