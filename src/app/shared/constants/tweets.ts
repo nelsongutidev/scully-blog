@@ -10,6 +10,17 @@ export type Tweet = {
 
 export const TWEETS: Tweet[] = [
   {
+    title: 'enableTracing and withDebugTracing()',
+    description:
+      'For debugging purposes around router events, Angular provides an easy way to log all internal navigation events to the console',
+    tweetId: '1622984875358752771',
+    src: 'https://pbs.twimg.com/media/FoX_01haEAUtP9k?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/FoX_01haEAUtP9k?format=jpg&name=large',
+    alt: 'enableTracing code snippet',
+    tags: ['Angular'],
+  },
+  {
     title: 'bootstrapApplication API',
     description:
       'As of Angular v15, you can Bootstrap an Angular application using a standalone component',
