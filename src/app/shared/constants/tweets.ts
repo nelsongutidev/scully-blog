@@ -10,6 +10,17 @@ export type Tweet = {
 
 export const TWEETS: Tweet[] = [
   {
+    title: 'TitleCasePipe',
+    description:
+      'Angular provides the TitleCasePipe, which capitalizes the first letter of each word and also transforms the rest of the word to lowercase.',
+    src: 'https://pbs.twimg.com/media/Fo89ns7akAIq3rQ?format=jpg&name=small',
+    srcLarge:
+      'https://pbs.twimg.com/media/Fo89ns7akAIq3rQ?format=jpg&name=large',
+    tweetId: '1625586017334878238',
+    alt: 'TitleCasePipe code snippet',
+    tags: ['Angular'],
+  },
+  {
     title: 'enableTracing and withDebugTracing()',
     description:
       'For debugging purposes around router events, Angular provides an easy way to log all internal navigation events to the console',
