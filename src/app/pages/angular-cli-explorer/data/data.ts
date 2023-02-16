@@ -257,7 +257,7 @@ export const OPTIONS: Option = {
     {
       value: '--defaults',
       description:
-        'disable interactive input prompts for options with a default',
+        'disabling interactive input prompts for options with a default',
       type: 'boolean',
       default: false,
       command: 'add',
@@ -265,27 +265,27 @@ export const OPTIONS: Option = {
     {
       value: '--dry-run',
       description:
-        'run through and report activity without writing out results',
+        'running through and reporting activity without writing out results',
       type: 'boolean',
       default: false,
       command: 'add',
     },
     {
       value: '--force',
-      description: 'force overwriting of existing files',
+      description: 'forcing overwriting of existing files',
       type: 'boolean',
       default: false,
       command: 'add',
     },
     {
       value: '--help',
-      description: 'show a help message for this command in the console',
+      description: 'showing a help message for this command in the console',
       type: 'boolean',
       command: 'add',
     },
     {
       value: '--interactive',
-      description: 'enable interactive input prompts',
+      description: 'enabling interactive input prompts',
       type: 'boolean',
       default: true,
       command: 'add',
@@ -299,7 +299,7 @@ export const OPTIONS: Option = {
     {
       value: '--skip-confirmation',
       description:
-        'skip asking a confirmation prompt before installing and executing the package',
+        'skipping asking a confirmation prompt before installing and executing the package',
       type: 'boolean',
       default: false,
       command: 'add',
@@ -307,7 +307,7 @@ export const OPTIONS: Option = {
     {
       value: '--verbose',
       description:
-        'display additional details about internal operations during execution',
+        'displaying additional details about internal operations during execution',
       type: 'boolean',
       default: false,
       command: 'add',
@@ -317,13 +317,13 @@ export const OPTIONS: Option = {
   doc: [
     {
       value: '--help',
-      description: 'show a help message for this command in the console',
+      description: 'showing a help message for this command in the console',
       type: 'boolean',
     },
     {
       value: '--search',
       description:
-        'search all of angular.io (otherwise, searches only API reference documentation)',
+        'searching all of angular.io (otherwise, searches only API reference documentation)',
       type: 'boolean',
       aliases: '-s',
       command: 'doc',
@@ -367,7 +367,7 @@ export const OPTIONS: Option = {
       aliases: [],
       type: 'boolean',
       description:
-        'disable interactive input prompts for options with a default',
+        'disabling interactive input prompts for options with a default',
       default: false,
       command: 'new',
     },
@@ -383,7 +383,7 @@ export const OPTIONS: Option = {
       aliases: [],
       type: 'boolean',
       description:
-        'run through and report activity without writing out results',
+        'running through and reporting activity without writing out results',
       default: false,
       command: 'new',
     },
@@ -391,7 +391,7 @@ export const OPTIONS: Option = {
       value: '--force',
       aliases: [],
       type: 'boolean',
-      description: 'force overwriting of existing files',
+      description: 'forcing overwriting of existing files',
       default: false,
       command: 'new',
     },
@@ -399,28 +399,28 @@ export const OPTIONS: Option = {
       value: '--help',
       aliases: [],
       type: 'boolean',
-      description: 'show a help message for this command in the console',
+      description: 'showing a help message for this command in the console',
       command: 'new',
     },
     {
       value: '--inline-style',
       aliases: ['-s'],
       type: 'boolean',
-      description: 'include styles inline in the component TS file',
+      description: 'including styles inline in the component TS file',
       command: 'new',
     },
     {
       value: '--inline-template',
       aliases: ['-t'],
       type: 'boolean',
-      description: 'include template inline in the component TS file',
+      description: 'including template inline in the component TS file',
       command: 'new',
     },
     {
       value: '--interactive',
       aliases: [],
       type: 'boolean',
-      description: 'enable interactive input prompts.',
+      description: 'enabling interactive input prompts.',
       default: true,
       command: 'new',
     },
@@ -428,7 +428,7 @@ export const OPTIONS: Option = {
       value: '--minimal',
       aliases: [],
       type: 'boolean',
-      description: 'create a workspace without any testing frameworks',
+      description: 'creating a workspace without any testing frameworks',
       default: false,
       command: 'new',
     },
@@ -437,13 +437,14 @@ export const OPTIONS: Option = {
       aliases: [],
       type: 'string',
       description:
-        'path where new projects will be created, relative to the new workspace',
+        'with a path where new projects will be created, relative to the new workspace',
       command: 'new',
     },
 
     {
       value: 'package-manager <npm | yarn | pnpm | cnpm>',
-      description: 'The package manager used to install dependencies.',
+      description:
+        'with a specific package manager used to install dependencies',
       options: ['npm', 'yarn', 'pnpm', 'cnpm'],
       type: 'string',
       command: 'new',
@@ -451,7 +452,7 @@ export const OPTIONS: Option = {
     {
       value: 'prefix <prefix>',
       description:
-        'prefix to apply to generated selectors for the initial project',
+        'with a prefix to apply to generated selectors for the initial project',
       aliases: ['-p'],
       type: 'string',
       default: 'app',
@@ -490,7 +491,7 @@ export const OPTIONS: Option = {
     {
       value: 'strict',
       description:
-        'create a workspace with stricter type checking and stricter bundle budgets settings',
+        'creating a workspace with stricter type checking and stricter bundle budgets settings',
       default: true,
       command: 'new',
     },
@@ -503,7 +504,8 @@ export const OPTIONS: Option = {
     },
     {
       value: 'view-encapsulation <Emulated | None | ShadowDom>',
-      description: 'view encapsulation strategy to use in the initial project.',
+      description:
+        'with a specific view encapsulation strategy to use in the initial project.',
       options: ['Emulated', 'None', 'ShadowDom'],
       type: 'string',
       command: 'new',
