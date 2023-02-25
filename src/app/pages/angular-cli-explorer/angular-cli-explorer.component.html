@@ -4,53 +4,47 @@
   Angular CLI Explorer
 </h1>
 
-<h4 class="lg:px-24 px-6 text-xl mb-4">I want to:</h4>
+<h4 class="lg:px-24 px-6 text-xl mb-4">I need a command that:</h4>
 <div class="lg:px-24 px-6 flex flex-col gap-x-4">
   <div class="xl:max-w-lg w-full">
     <mat-form-field class="w-full" appearance="fill">
       <mat-label>Command</mat-label>
-      <mat-select [formControl]="primaryOption">
-        <mat-option *ngFor="let action of primaryOptions" [value]="action">
-          {{ action.label }}
+      <mat-select [formControl]="commandCtrl">
+        <mat-option *ngFor="let command of commands" [value]="command">
+          {{ command.shortDescription }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <!-- <mat-icon
-      *ngIf="primaryOption.value?.description"
-      fontIcon="info"
-      [matTooltip]="primaryOption.value?.description || ''"
-      matTooltipPosition="right"
-    ></mat-icon> -->
   </div>
 
   <mat-form-field
-    *ngIf="secondaryOptions?.[primaryOption.value?.value]"
+    *ngIf="commandCtrl.value?.subcommands"
     class="xl:max-w-lg w-full"
     appearance="fill"
   >
     <mat-label>Sub-commands</mat-label>
-    <mat-select [formControl]="secondaryOption">
+    <mat-select [formControl]="subCommandCtrl">
       <mat-option
-        *ngFor="let action of secondaryOptions?.[primaryOption.value?.value]"
-        [value]="action"
+        *ngFor="let subCommand of commandCtrl.value?.subcommands"
+        [value]="subCommand"
       >
-        {{ action.label }}
+        {{ subCommand.shortDescription }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field
-    *ngIf="tertiaryOptions?.[primaryOption.value?.value]"
+    *ngIf="commandCtrl.value?.options"
     class="xl:max-w-lg w-full"
     appearance="fill"
   >
     <mat-label>Options</mat-label>
-    <mat-select [formControl]="tertiaryOption">
+    <mat-select [formControl]="optionCtrl">
       <mat-option
-        *ngFor="let action of tertiaryOptions?.[primaryOption.value?.value]"
-        [value]="action"
+        *ngFor="let option of commandCtrl?.value?.options | filterOption"
+        [value]="option"
       >
-        {{ action.description }}
+        {{ option.description }}
       </mat-option>
     </mat-select>
   </mat-form-field>

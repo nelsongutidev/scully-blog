@@ -15,6 +15,8 @@ import {
 } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NG_COMMANDS } from './data/angular-data';
+import { FilterOptionPipe } from './data/filter-option.pipe';
 @Component({
   selector: 'app-angular-cli-explorer',
   standalone: true,
@@ -25,44 +27,30 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatIconModule,
     MatTooltipModule,
+    FilterOptionPipe,
   ],
   templateUrl: './angular-cli-explorer.component.html',
   styles: [],
 })
 export class AngularCliExplorerComponent {
-  primaryOption = new FormControl();
-  secondaryOption = new FormControl();
-  tertiaryOption = new FormControl();
-
-  primaryOptions = COMMAND;
-  secondaryOptions = SUB_COMMAND;
-  tertiaryOptions = OPTIONS;
-
-  primaryOption$: Observable<Command | undefined> =
-    this.primaryOption.valueChanges.pipe(
-      map((value: string) =>
-        COMMAND.find((option: Command) => option.value === value)
-      )
-    );
+  commandCtrl = new FormControl();
+  optionCtrl = new FormControl();
+  subCommandCtrl = new FormControl();
+  commands = NG_COMMANDS;
 
   command$: Observable<string> = combineLatest(
-    this.primaryOption.valueChanges.pipe(startWith(null)),
-    this.secondaryOption.valueChanges.pipe(startWith(null)),
-    this.tertiaryOption.valueChanges.pipe(startWith(null))
+    this.commandCtrl.valueChanges.pipe(startWith(null)),
+    this.subCommandCtrl.valueChanges.pipe(startWith(null)),
+    this.optionCtrl.valueChanges.pipe(startWith(null))
   ).pipe(
-    map(([primaryOption, secondaryOption, tertiaryOption]) => {
-      const optionSelected =
-        tertiaryOption && primaryOption.value === tertiaryOption.command
-          ? tertiaryOption.value
-          : '';
+    map(([command, subCommand, option]) => {
+      console.log('command: ', command);
+      console.log('subCommand: ', subCommand);
+      console.log('option: ', option);
 
-      if (primaryOption?.command) {
-        return optionSelected
-          ? primaryOption.command + ' ' + optionSelected
-          : primaryOption.command;
-      }
-
-      return secondaryOption?.command;
+      return `${command?.command || ''} ${subCommand?.command || ''} ${
+        option?.name ? `--${option.name}` : ''
+      }`;
     })
   );
 
