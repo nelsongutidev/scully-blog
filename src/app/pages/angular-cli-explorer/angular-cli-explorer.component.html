@@ -6,7 +6,7 @@
 
 <h4 class="lg:px-24 px-6 text-xl mb-4">I need a command that:</h4>
 <div class="lg:px-24 px-6 flex flex-col gap-x-4">
-  <div class="xl:max-w-lg w-full">
+  <div class="w-full">
     <mat-form-field class="w-full" appearance="fill">
       <mat-label>Command</mat-label>
       <mat-select [formControl]="commandCtrl">
@@ -17,37 +17,55 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field
-    *ngIf="commandCtrl.value?.subcommands"
-    class="xl:max-w-lg w-full"
-    appearance="fill"
+  <ng-container
+    *ngIf="commandCtrl.value?.subcommands?.length > 0; else commandOptions"
   >
-    <mat-label>Sub-commands</mat-label>
-    <mat-select [formControl]="subCommandCtrl">
-      <mat-option
-        *ngFor="let subCommand of commandCtrl.value?.subcommands"
-        [value]="subCommand"
-      >
-        {{ subCommand.shortDescription }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label>Sub-commands</mat-label>
+      <mat-select [formControl]="subCommandCtrl">
+        <mat-option
+          *ngFor="let subCommand of commandCtrl.value?.subcommands"
+          [value]="subCommand"
+        >
+          {{ subCommand.shortDescription }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field
-    *ngIf="commandCtrl.value?.options"
-    class="xl:max-w-lg w-full"
-    appearance="fill"
-  >
-    <mat-label>Options</mat-label>
-    <mat-select [formControl]="optionCtrl">
-      <mat-option
-        *ngFor="let option of commandCtrl?.value?.options | filterOption"
-        [value]="option"
-      >
-        {{ option.description }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field
+      *ngIf="subCommandCtrl?.value?.options?.length > 0"
+      class="w-full"
+      appearance="fill"
+    >
+      <mat-label>Subcommand Options</mat-label>
+      <mat-select [formControl]="subcommandOptionCtrl">
+        <mat-option
+          *ngFor="let option of subCommandCtrl?.value.options | filterOption"
+          [value]="option"
+        >
+          {{ option.description }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-template #commandOptions>
+    <mat-form-field
+      *ngIf="commandCtrl.value?.options"
+      class="w-full"
+      appearance="fill"
+    >
+      <mat-label>Options</mat-label>
+      <mat-select [formControl]="optionCtrl">
+        <mat-option
+          *ngFor="let option of commandCtrl?.value?.options | filterOption"
+          [value]="option"
+        >
+          {{ option.description }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-template>
 </div>
 
 <section class="flex flex-col items-center my-4">

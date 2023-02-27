@@ -3,15 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TerminalComponent } from 'src/app/shared/components/terminal/terminal.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Command, COMMAND, SUB_COMMAND, OPTIONS } from './data/data';
+
 import {
+  BehaviorSubject,
   combineLatest,
+  distinctUntilChanged,
   map,
   Observable,
-  ReplaySubject,
   startWith,
-  takeUntil,
-  tap,
 } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -36,23 +35,45 @@ export class AngularCliExplorerComponent {
   commandCtrl = new FormControl();
   optionCtrl = new FormControl();
   subCommandCtrl = new FormControl();
+  subcommandOptionCtrl = new FormControl();
   commands = NG_COMMANDS;
+
+  currentCommand$ = new BehaviorSubject(null);
 
   command$: Observable<string> = combineLatest(
     this.commandCtrl.valueChanges.pipe(startWith(null)),
     this.subCommandCtrl.valueChanges.pipe(startWith(null)),
-    this.optionCtrl.valueChanges.pipe(startWith(null))
+    this.optionCtrl.valueChanges.pipe(startWith(null)),
+    this.subcommandOptionCtrl.valueChanges.pipe(startWith(null))
   ).pipe(
-    map(([command, subCommand, option]) => {
-      console.log('command: ', command);
-      console.log('subCommand: ', subCommand);
-      console.log('option: ', option);
+    map(([command, subCommand, option, subcommandOption]) => {
+      // console.log('command: ', command);
+      // console.log('subCommand: ', subCommand);
+      // console.log('option]: ', option);
+      // console.log('subcommandOption: ', subcommandOption);
 
-      return `${command?.command || ''} ${subCommand?.command || ''} ${
-        option?.name ? `--${option.name}` : ''
-      }`;
+      if (this.currentCommand$.value !== command?.name) {
+        subCommand = null;
+        option = null;
+        subcommandOption = null;
+      }
+
+      this.currentCommand$.next(command?.name);
+      let _option = `${option?.name ? `--${option.name}` : ''}`;
+
+      if (command?.subcommands?.length > 0) {
+        _option = `${
+          subcommandOption?.name ? `--${subcommandOption.name}` : ''
+        }`;
+      }
+
+      return `${command?.command || ''} ${
+        subCommand?.command || ''
+      } ${_option}`;
     })
   );
 
-  ngOnInit() {}
+  ngOnDestory() {
+    this.currentCommand$.complete();
+  }
 }

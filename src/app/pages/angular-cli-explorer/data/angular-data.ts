@@ -485,7 +485,7 @@ export const NG_COMMANDS = [
   },
   {
     name: 'generate',
-    command: 'ng generate <schematic>',
+    command: 'ng generate',
     shortDescription: 'Generates and/or modifies files based on a schematic.',
     aliases: ['g'],
     deprecated: false,
@@ -1387,6 +1387,590 @@ export const NG_COMMANDS = [
         ],
         aliases: [],
         deprecated: false,
+      },
+    ],
+  },
+  {
+    name: 'lint',
+    command: 'ng lint [project]',
+    shortDescription:
+      'Runs linting tools on Angular application code in a given project folder.',
+    longDescriptionRelativePath:
+      '@angular/cli/src/commands/lint/long-description.md',
+    longDescription:
+      'The command takes an optional project name, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, executes the `lint` builder for all projects.\n\nTo use the `ng lint` command, use `ng add` to add a package that implements linting capabilities. Adding the package automatically updates your workspace configuration, adding a lint [CLI builder](guide/cli-builder).\nFor example:\n\n```json\n"projects": {\n  "my-project": {\n    ...\n    "architect": {\n      ...\n      "lint": {\n        "builder": "@angular-eslint/builder:lint",\n        "options": {}\n      }\n    }\n  }\n}\n```\n',
+    aliases: [],
+    deprecated: false,
+    options: [
+      {
+        name: 'configuration',
+        type: 'string',
+        aliases: ['c'],
+        description:
+          'One or more named builder configurations as a comma-separated list as specified in the "configurations" section in angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.',
+      },
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
+      },
+      {
+        name: 'project',
+        type: 'string',
+        description:
+          'The name of the project to build. Can be an application or a library.',
+        positional: 0,
+      },
+    ],
+  },
+  {
+    name: 'new',
+    command: 'ng new [name]',
+    shortDescription: 'Creates a new Angular workspace.',
+    longDescriptionRelativePath:
+      '@angular/cli/src/commands/new/long-description.md',
+    longDescription:
+      "Creates and initializes a new Angular application that is the default project for a new workspace.\n\nProvides interactive prompts for optional configuration, such as adding routing support.\nAll prompts can safely be allowed to default.\n\n- The new workspace folder is given the specified project name, and contains configuration files at the top level.\n\n- By default, the files for a new initial application (with the same name as the workspace) are placed in the `src/` subfolder.\n- The new application's configuration appears in the `projects` section of the `angular.json` workspace configuration file, under its project name.\n\n- Subsequent applications that you generate in the workspace reside in the `projects/` subfolder.\n\nIf you plan to have multiple applications in the workspace, you can create an empty workspace by using the `--no-create-application` option.\nYou can then use `ng generate application` to create an initial application.\nThis allows a workspace name different from the initial app name, and ensures that all applications reside in the `/projects` subfolder, matching the structure of the configuration file.\n",
+    aliases: ['n'],
+    deprecated: false,
+    options: [
+      {
+        name: 'collection',
+        type: 'string',
+        aliases: ['c'],
+        description:
+          'A collection of schematics to use in generating the initial application.',
+      },
+      {
+        name: 'commit',
+        type: 'boolean',
+        default: true,
+        description: 'Initial git repository commit information.',
+      },
+      {
+        name: 'create-application',
+        type: 'boolean',
+        default: true,
+        description:
+          "Create a new initial application project in the 'src' folder of the new workspace. When false, creates an empty workspace with no initial application. You can then use the generate application command so that all applications are created in the projects folder.",
+      },
+      {
+        name: 'defaults',
+        type: 'boolean',
+        default: false,
+        description:
+          'Disable interactive input prompts for options with a default.',
+      },
+      {
+        name: 'directory',
+        type: 'string',
+        description: 'The directory name to create the workspace in.',
+      },
+      {
+        name: 'dry-run',
+        type: 'boolean',
+        default: false,
+        description:
+          'Run through and reports activity without writing out results.',
+      },
+      {
+        name: 'force',
+        type: 'boolean',
+        default: false,
+        description: 'Force overwriting of existing files.',
+      },
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
+      },
+      {
+        name: 'inline-style',
+        type: 'boolean',
+        aliases: ['s'],
+        description:
+          'Include styles inline in the component TS file. By default, an external styles file is created and referenced in the component TypeScript file.',
+      },
+      {
+        name: 'inline-template',
+        type: 'boolean',
+        aliases: ['t'],
+        description:
+          'Include template inline in the component TS file. By default, an external template file is created and referenced in the component TypeScript file.',
+      },
+      {
+        name: 'interactive',
+        type: 'boolean',
+        default: true,
+        description: 'Enable interactive input prompts.',
+      },
+      {
+        name: 'minimal',
+        type: 'boolean',
+        default: false,
+        description:
+          'Create a workspace without any testing frameworks. (Use for learning purposes only.)',
+      },
+      {
+        name: 'name',
+        type: 'string',
+        description: 'The name of the new workspace and initial project.',
+        positional: 0,
+      },
+      {
+        name: 'new-project-root',
+        type: 'string',
+        default: 'projects',
+        description:
+          'The path where new projects will be created, relative to the new workspace root.',
+      },
+      {
+        name: 'package-manager',
+        type: 'string',
+        enum: ['npm', 'yarn', 'pnpm', 'cnpm'],
+        description: 'The package manager used to install dependencies.',
+      },
+      {
+        name: 'prefix',
+        type: 'string',
+        aliases: ['p'],
+        default: 'app',
+        description:
+          'The prefix to apply to generated selectors for the initial project.',
+      },
+      {
+        name: 'routing',
+        type: 'boolean',
+        description: 'Generate a routing module for the initial project.',
+      },
+      {
+        name: 'skip-git',
+        type: 'boolean',
+        aliases: ['g'],
+        default: false,
+        description: 'Do not initialize a git repository.',
+      },
+      {
+        name: 'skip-install',
+        type: 'boolean',
+        default: false,
+        description: 'Do not install dependency packages.',
+      },
+      {
+        name: 'skip-tests',
+        type: 'boolean',
+        aliases: ['S'],
+        default: false,
+        description:
+          'Do not generate "spec.ts" test files for the new project.',
+      },
+      {
+        name: 'strict',
+        type: 'boolean',
+        default: true,
+        description:
+          'Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/guide/strict-mode',
+      },
+      {
+        name: 'style',
+        type: 'string',
+        enum: ['css', 'scss', 'sass', 'less'],
+        description:
+          'The file extension or preprocessor to use for style files.',
+      },
+      {
+        name: 'view-encapsulation',
+        type: 'string',
+        enum: ['Emulated', 'None', 'ShadowDom'],
+        description:
+          'The view encapsulation strategy to use in the initial project.',
+      },
+    ],
+  },
+  //   {
+  //     name: 'run',
+  //     command: 'ng run <target>',
+  //     shortDescription:
+  //       'Runs an Architect target with an optional custom builder configuration defined in your project.',
+  //     longDescriptionRelativePath:
+  //       '@angular/cli/src/commands/run/long-description.md',
+  //     longDescription:
+  //       'Architect is the tool that the CLI uses to perform complex tasks such as compilation, according to provided configurations.\nThe CLI commands run Architect targets such as `build`, `serve`, `test`, and `lint`.\nEach named target has a default configuration, specified by an `options` object,\nand an optional set of named alternate configurations in the `configurations` object.\n\nFor example, the `serve` target for a newly generated app has a predefined\nalternate configuration named `production`.\n\nYou can define new targets and their configuration options in the `architect` section\nof the `angular.json` file which you can run them from the command line using the `ng run` command.\n',
+  //     aliases: [],
+  //     deprecated: false,
+  //     options: [
+  //       {
+  //         name: 'help',
+  //         type: 'boolean',
+  //         description: 'Shows a help message for this command in the console.',
+  //       },
+  //       {
+  //         name: 'target',
+  //         type: 'string',
+  //         description:
+  //           'The Architect target to run provided in the the following format `project:target[:configuration]`.',
+  //         positional: 0,
+  //       },
+  //     ],
+  //   },
+  {
+    name: 'serve',
+    command: 'ng serve [project]',
+    shortDescription:
+      'Builds and serves your application, rebuilding on file changes.',
+    aliases: ['s'],
+    deprecated: false,
+    options: [
+      {
+        name: 'allowed-hosts',
+        type: 'array',
+        description: 'List of hosts that are allowed to access the dev server.',
+      },
+      {
+        name: 'browser-target',
+        type: 'string',
+        description:
+          'A browser builder target to serve in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.',
+      },
+      {
+        name: 'configuration',
+        type: 'string',
+        aliases: ['c'],
+        description:
+          'One or more named builder configurations as a comma-separated list as specified in the "configurations" section in angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.',
+      },
+      {
+        name: 'disable-host-check',
+        type: 'boolean',
+        default: false,
+        description:
+          "Don't verify connected clients are part of allowed hosts.",
+      },
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
+      },
+      {
+        name: 'hmr',
+        type: 'boolean',
+        default: false,
+        description: 'Enable hot module replacement.',
+      },
+      {
+        name: 'host',
+        type: 'string',
+        default: 'localhost',
+        description: 'Host to listen on.',
+      },
+      {
+        name: 'live-reload',
+        type: 'boolean',
+        default: true,
+        description: 'Whether to reload the page on change, using live-reload.',
+      },
+      {
+        name: 'open',
+        type: 'boolean',
+        aliases: ['o'],
+        default: false,
+        description: 'Opens the url in default browser.',
+      },
+      {
+        name: 'poll',
+        type: 'number',
+        description:
+          'Enable and define the file watching poll time period in milliseconds.',
+      },
+      {
+        name: 'port',
+        type: 'number',
+        default: 4200,
+        description: 'Port to listen on.',
+      },
+      {
+        name: 'project',
+        type: 'string',
+        description:
+          'The name of the project to build. Can be an application or a library.',
+        positional: 0,
+      },
+      {
+        name: 'proxy-config',
+        type: 'string',
+        description:
+          'Proxy configuration file. For more information, see https://angular.io/guide/build#proxying-to-a-backend-server.',
+      },
+      {
+        name: 'public-host',
+        type: 'string',
+        description:
+          'The URL that the browser client (or live-reload client, if enabled) should use to connect to the development server. Use for a complex dev server setup, such as one with reverse proxies.',
+      },
+      {
+        name: 'serve-path',
+        type: 'string',
+        description: 'The pathname where the application will be served.',
+      },
+      {
+        name: 'ssl',
+        type: 'boolean',
+        default: false,
+        description: 'Serve using HTTPS.',
+      },
+      {
+        name: 'ssl-cert',
+        type: 'string',
+        description: 'SSL certificate to use for serving HTTPS.',
+      },
+      {
+        name: 'ssl-key',
+        type: 'string',
+        description: 'SSL key to use for serving HTTPS.',
+      },
+      {
+        name: 'verbose',
+        type: 'boolean',
+        description: 'Adds more details to output logging.',
+      },
+      {
+        name: 'watch',
+        type: 'boolean',
+        default: true,
+        description: 'Rebuild on change.',
+      },
+    ],
+  },
+  {
+    name: 'test',
+    command: 'ng test [project]',
+    shortDescription: 'Runs unit tests in a project.',
+    longDescriptionRelativePath:
+      '@angular/cli/src/commands/test/long-description.md',
+    longDescription:
+      'Takes the name of the project, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, it will execute for all projects.\n',
+    aliases: ['t'],
+    deprecated: false,
+    options: [
+      {
+        name: 'browsers',
+        type: 'string',
+        description: 'Override which browsers tests are run against.',
+      },
+      {
+        name: 'code-coverage',
+        type: 'boolean',
+        default: false,
+        description: 'Output a code coverage report.',
+      },
+      {
+        name: 'code-coverage-exclude',
+        type: 'array',
+        description: 'Globs to exclude from code coverage.',
+      },
+      {
+        name: 'configuration',
+        type: 'string',
+        aliases: ['c'],
+        description:
+          'One or more named builder configurations as a comma-separated list as specified in the "configurations" section in angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.',
+      },
+      {
+        name: 'exclude',
+        type: 'array',
+        description: 'Globs of files to exclude, relative to the project root.',
+      },
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
+      },
+      {
+        name: 'include',
+        type: 'array',
+        description:
+          'Globs of files to include, relative to project root. \nThere are 2 special cases:\n - when a path to directory is provided, all spec files ending ".spec.@(ts|tsx)" will be included\n - when a path to a file is provided, and a matching spec file exists it will be included instead.',
+      },
+      {
+        name: 'inline-style-language',
+        type: 'string',
+        default: 'css',
+        enum: ['css', 'less', 'sass', 'scss'],
+        description:
+          "The stylesheet language to use for the application's inline component styles.",
+      },
+      {
+        name: 'karma-config',
+        type: 'string',
+        description: 'The name of the Karma configuration file.',
+      },
+      {
+        name: 'main',
+        type: 'string',
+        description: 'The name of the main entry-point file.',
+      },
+      {
+        name: 'poll',
+        type: 'number',
+        description:
+          'Enable and define the file watching poll time period in milliseconds.',
+      },
+      {
+        name: 'polyfills',
+        type: 'string',
+        description: 'Polyfills to be included in the build.',
+      },
+      {
+        name: 'preserve-symlinks',
+        type: 'boolean',
+        description:
+          'Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.',
+      },
+      {
+        name: 'progress',
+        type: 'boolean',
+        default: true,
+        description: 'Log progress to the console while building.',
+      },
+      {
+        name: 'project',
+        type: 'string',
+        description:
+          'The name of the project to build. Can be an application or a library.',
+        positional: 0,
+      },
+      {
+        name: 'reporters',
+        type: 'array',
+        description:
+          'Karma reporters to use. Directly passed to the karma runner.',
+      },
+      {
+        name: 'source-map',
+        type: 'boolean',
+        default: true,
+        description:
+          'Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.',
+      },
+      {
+        name: 'ts-config',
+        type: 'string',
+        description: 'The name of the TypeScript configuration file.',
+      },
+      {
+        name: 'watch',
+        type: 'boolean',
+        description: 'Run build when files change.',
+      },
+      {
+        name: 'web-worker-ts-config',
+        type: 'string',
+        description: 'TypeScript configuration for Web Worker modules.',
+      },
+    ],
+  },
+  {
+    name: 'update',
+    command: 'ng update [packages..]',
+    shortDescription:
+      'Updates your workspace and its dependencies. See https://update.angular.io/.',
+    longDescriptionRelativePath:
+      '@angular/cli/src/commands/update/long-description.md',
+    longDescription:
+      'Perform a basic update to the current stable release of the core framework and CLI by running the following command.\n\n```\nng update @angular/cli @angular/core\n```\n\nTo update to the next beta or pre-release version, use the `--next` option.\n\nTo update from one major version to another, use the format\n\n```\nng update @angular/cli@^<major_version> @angular/core@^<major_version>\n```\n\nWe recommend that you always update to the latest patch version, as it contains fixes we released since the initial major release.\nFor example, use the following command to take the latest 10.x.x version and use that to update.\n\n```\nng update @angular/cli@^10 @angular/core@^10\n```\n\nFor detailed information and guidance on updating your application, see the interactive [Angular Update Guide](https://update.angular.io/).\n',
+    aliases: [],
+    deprecated: false,
+    options: [
+      {
+        name: 'allow-dirty',
+        type: 'boolean',
+        default: false,
+        description:
+          'Whether to allow updating when the repository contains modified or untracked files.',
+      },
+      {
+        name: 'create-commits',
+        type: 'boolean',
+        aliases: ['C'],
+        default: false,
+        description:
+          'Create source control commits for updates and migrations.',
+      },
+      {
+        name: 'force',
+        type: 'boolean',
+        default: false,
+        description: 'Ignore peer dependency version mismatches.',
+      },
+      {
+        name: 'from',
+        type: 'string',
+        description:
+          "Version from which to migrate from. Only available with a single package being updated, and only with 'migrate-only'.",
+      },
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
+      },
+      {
+        name: 'migrate-only',
+        type: 'boolean',
+        description:
+          'Only perform a migration, do not update the installed version.',
+      },
+      {
+        name: 'name',
+        type: 'string',
+        description:
+          "The name of the migration to run. Only available with a single package being updated, and only with 'migrate-only' option.",
+      },
+      {
+        name: 'next',
+        type: 'boolean',
+        default: false,
+        description: 'Use the prerelease version, including beta and RCs.',
+      },
+      {
+        name: 'packages',
+        type: 'array',
+        default: [],
+        description: 'The names of package(s) to update.',
+        positional: 0,
+      },
+      {
+        name: 'packages',
+        type: 'string',
+        default: [],
+        description: 'The names of package(s) to update.',
+        positional: 0,
+      },
+      {
+        name: 'to',
+        type: 'string',
+        description:
+          "Version up to which to apply migrations. Only available with a single package being updated, and only with 'migrate-only' option. Requires 'from' to be specified. Default to the installed version detected.",
+      },
+      {
+        name: 'verbose',
+        type: 'boolean',
+        default: false,
+        description:
+          'Display additional details about internal operations during execution.',
+      },
+    ],
+  },
+  {
+    name: 'version',
+    command: 'ng version',
+    shortDescription: 'Outputs Angular CLI version.',
+    aliases: ['v'],
+    deprecated: false,
+    options: [
+      {
+        name: 'help',
+        type: 'boolean',
+        description: 'Shows a help message for this command in the console.',
       },
     ],
   },
