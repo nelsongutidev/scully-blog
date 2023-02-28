@@ -9,6 +9,7 @@ import { AngularLogoComponent } from './shared/components/angular-logo/angular-l
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarkdownModule } from 'ngx-markdown';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SidenavComponent,
     AngularLogoComponent,
     FooterComponent,
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

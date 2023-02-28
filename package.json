@@ -28,6 +28,9 @@
     "@scullyio/scully": "^2.1.36",
     "@scullyio/scully-plugin-puppeteer": "^2.1.36",
     "@tailwindcss/typography": "^0.5.8",
+    "marked": "^4.2.12",
+    "ngx-markdown": "^15.1.1",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -38,6 +41,7 @@
     "@angular/compiler-cli": "^15.1.2",
     "@gammastream/scully-plugin-http404": "^1.0.4",
     "@types/jasmine": "~4.0.0",
+    "@types/marked": "^4.0.8",
     "autoprefixer": "^10.4.12",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",

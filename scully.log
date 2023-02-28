@@ -16,3 +16,9 @@ Folder "./scully" doesn't seem to contain custom plugins Deprecation Notice:
        ======================================================================
 
 (You can skip this, or any future question by using the --noPrompt flag)
+Folder "./scully" doesn't seem to contain custom pluginsUsing deprecated plugin type:"render"  use "postProcessByHtml" instead
+
+----------------------------------Using stored unhandled routes!.   To discover new routes in the angular app use "npm run scully -- --scanRoutes"----------------------------------
+
+
+
