@@ -17,7 +17,7 @@ export type Option1 = {
   default?: boolean;
 };
 
-export const NG_COMMANDS = [
+export const RAW_NG_COMMANDS = [
   {
     name: 'add',
     command: 'ng add <collection>',
@@ -1872,8 +1872,7 @@ export const NG_COMMANDS = [
   {
     name: 'update',
     command: 'ng update [packages..]',
-    shortDescription:
-      'Updates your workspace and its dependencies. See https://update.angular.io/.',
+    shortDescription: 'Updates your workspace and its dependencies',
     longDescriptionRelativePath:
       '@angular/cli/src/commands/update/long-description.md',
     longDescription:
@@ -1975,3 +1974,27 @@ export const NG_COMMANDS = [
     ],
   },
 ];
+
+export const NG_COMMANDS = RAW_NG_COMMANDS.map((command) => {
+  return {
+    ...command,
+    options: command.options.map((option) => {
+      return {
+        ...option,
+        parentCommand: command.name,
+      };
+    }),
+    subcommands: (command.subcommands || []).map((subcommand) => {
+      return {
+        ...subcommand,
+        parentCommand: command.name,
+        options: subcommand.options.map((option) => {
+          return {
+            ...option,
+            parentCommand: subcommand.name,
+          };
+        }),
+      };
+    }),
+  };
+});

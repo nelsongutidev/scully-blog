@@ -51,7 +51,7 @@
 
   <ng-template #commandOptions>
     <mat-form-field
-      *ngIf="commandCtrl.value?.options"
+      *ngIf="commandCtrl.value?.options?.length > 0"
       class="w-full"
       appearance="fill"
     >
