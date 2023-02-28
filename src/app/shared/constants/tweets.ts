@@ -5,10 +5,21 @@ export type Tweet = {
   srcLarge: string;
   alt: string;
   tweetId: string;
-  tags: Array<'Angular' | 'Javascript'>;
+  tags: Array<'Angular' | 'Javascript' | 'CLI'>;
 };
 
 export const TWEETS: Tweet[] = [
+  {
+    title: 'ng update',
+    description:
+      "Angular's powerful CLI provides the ng update command to perform a basic update to the current stable release of the core framework and CLI",
+    srcLarge:
+      'https://pbs.twimg.com/media/FqEcqjIaIAE-luf?format=jpg&name=large',
+    src: 'https://pbs.twimg.com/media/FqEcqjIaIAE-luf?format=jpg&name=small',
+    alt: 'ng update code snippet',
+    tweetId: '1630618252693979165',
+    tags: ['Angular', 'CLI'],
+  },
   {
     title: 'TitleCasePipe',
     description:
