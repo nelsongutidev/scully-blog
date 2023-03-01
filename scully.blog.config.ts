@@ -47,6 +47,15 @@ export const config: ScullyConfig = {
   distFolder: './dist/blog', // output directory of your Angular build artifacts
   outDir: './dist/static', // directory for scully build artifacts
   defaultPostRenderers: [Http404Plugin],
+  extraRoutes: [
+    '/blog',
+    '/blog/:slug',
+    '/about',
+    '/tips',
+    '/tips/:tweetId',
+    '/angular-cli-explorer',
+    '/**',
+  ],
   routes: {
     '/blog/:slug': {
       type: 'contentFolder',
