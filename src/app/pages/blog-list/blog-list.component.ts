@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-import { filter, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
