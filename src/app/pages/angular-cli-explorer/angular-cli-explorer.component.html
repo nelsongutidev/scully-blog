@@ -17,7 +17,7 @@
     </mat-form-field>
     <button
       *ngIf="commandCtrl.value?.longDescription"
-      class="mb-4"
+      class="mb-4 md:block hidden"
       type="button"
       (click)="openDescriptionDialog()"
     >
@@ -41,7 +41,10 @@
     </mat-form-field>
 
     <mat-form-field
-      *ngIf="subCommandCtrl?.value?.options?.length > 0"
+      *ngIf="
+        subCommandCtrl?.value?.parentCommand === commandCtrl?.value?.name &&
+        subCommandCtrl?.value?.options?.length > 0
+      "
       class="w-full"
       appearance="fill"
     >

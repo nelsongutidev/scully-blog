@@ -53,6 +53,7 @@ export class AngularCliExplorerComponent {
     this.subcommandOptionCtrl.valueChanges.pipe(startWith(null))
   ).pipe(
     map(([command, subCommand, option, subcommandOption]) => {
+      console.log('ubCommand: ', subCommand);
       subCommand =
         subCommand?.parentCommand === command?.name ? subCommand : null;
       option = option?.parentCommand === command?.name ? option : null;
