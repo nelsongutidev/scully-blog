@@ -20,7 +20,7 @@ export type Option1 = {
 export const RAW_NG_COMMANDS = [
   {
     name: 'add',
-    command: 'ng add <collection>',
+    command: 'ng add ',
     shortDescription: 'Adds support for an external library to your project.',
     longDescriptionRelativePath:
       '@angular/cli/src/commands/add/long-description.md',
@@ -28,6 +28,10 @@ export const RAW_NG_COMMANDS = [
       "Adds the npm package for a published library to your workspace, and configures\nthe project in the current working directory to use that library, as specified by the library's schematic.\nFor example, adding `@angular/pwa` configures your project for PWA support:\n\n```bash\nng add @angular/pwa\n```\n",
     aliases: [],
     deprecated: false,
+    arguments: {
+      placeholder: 'The package to be added.',
+      label: 'Collection Name',
+    },
     options: [
       {
         name: 'collection',
@@ -89,7 +93,7 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'build',
-    command: 'ng build [project]',
+    command: 'ng build',
     shortDescription:
       'Compiles an Angular application or library into an output directory named dist/ at the given output path.',
     longDescriptionRelativePath:
@@ -98,6 +102,11 @@ export const RAW_NG_COMMANDS = [
       'The command can be used to build a project of type "application" or "library".\nWhen used to build a library, a different builder is invoked, and only the `ts-config`, `configuration`, and `watch` options are applied.\nAll other options apply only to building applications.\n\nThe application builder uses the [webpack](https://webpack.js.org/) build tool, with default configuration options specified in the workspace configuration file (`angular.json`) or with a named alternative configuration.\nA "development" configuration is created by default when you use the CLI to create the project, and you can use that configuration by specifying the `--configuration development`.\n\nThe configuration options generally correspond to the command options.\nYou can override individual configuration defaults by specifying the corresponding options on the command line.\nThe command can accept option names given in either dash-case or camelCase.\nNote that in the configuration file, you must specify names in camelCase.\n\nSome additional options can only be set through the configuration file,\neither by direct editing or with the `ng config` command.\nThese include `assets`, `styles`, and `scripts` objects that provide runtime-global resources to include in the project.\nResources in CSS, such as images and fonts, are automatically written and fingerprinted at the root of the output folder.\n\nFor further details, see [Workspace Configuration](guide/workspace-config).\n',
     aliases: ['b'],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The name of the project to build. Can be an application or a library.',
+      label: 'Project Name',
+    },
     options: [
       {
         name: 'allowed-common-js-dependencies',
@@ -420,11 +429,16 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'doc',
-    command: 'ng doc <keyword>',
+    command: 'ng doc',
     shortDescription:
       'Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.',
     aliases: ['d'],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The keyword to search for, as provided in the search bar in angular.io.',
+      label: 'Keyword',
+    },
     options: [
       {
         name: 'help',
@@ -456,11 +470,16 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'e2e',
-    command: 'ng e2e [project]',
+    command: 'ng e2e',
     shortDescription:
       'Builds and serves an Angular application, then runs end-to-end tests.',
     aliases: ['e'],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The name of the project to build. Can be an application or a library.',
+      label: 'Project name',
+    },
     options: [
       {
         name: 'configuration',
@@ -576,9 +595,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'application',
-        command: 'application [name]',
+        command: 'application',
         shortDescription:
           'Generates a new basic application definition in the "projects" subfolder of the workspace.',
+        arguments: {
+          placeholder: 'The name of the new application.',
+          label: 'Application name',
+        },
         options: [
           {
             name: 'inline-style',
@@ -673,9 +696,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'class',
-        command: 'class [name]',
+        command: 'class',
         shortDescription:
           'Creates a new, generic class definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the new class.',
+          label: 'Class name',
+        },
         options: [
           {
             name: 'name',
@@ -707,9 +734,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'component',
-        command: 'component [name]',
+        command: 'component',
         shortDescription:
           'Creates a new, generic component definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the component.',
+          label: 'Component name',
+        },
         options: [
           {
             name: 'change-detection',
@@ -842,9 +873,14 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'config',
-        command: 'config [type]',
+        command: 'config',
         shortDescription:
           'Generates a configuration file in the given project.',
+        arguments: {
+          placeholder:
+            'Specifies which type of configuration file to create. (karma | browserslist)',
+          label: 'Type',
+        },
         options: [
           {
             name: 'project',
@@ -865,9 +901,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'directive',
-        command: 'directive [name]',
+        command: 'directive',
         shortDescription:
           'Creates a new, generic directive definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the directive.',
+          label: 'Directive name',
+        },
         options: [
           {
             name: 'export',
@@ -936,9 +976,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'enum',
-        command: 'enum [name]',
+        command: 'enum',
         shortDescription:
           'Generates a new, generic enum definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the enum.',
+          label: 'Enum name',
+        },
         options: [
           {
             name: 'name',
@@ -979,9 +1023,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'guard',
-        command: 'guard [name]',
+        command: 'guard',
         shortDescription:
           'Generates a new, generic route guard definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the new route guard.',
+          label: 'Route guard name',
+        },
         options: [
           {
             name: 'flat',
@@ -1026,9 +1074,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'interceptor',
-        command: 'interceptor [name]',
+        command: 'interceptor',
         shortDescription:
           'Creates a new, generic interceptor definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the interceptor.',
+          label: 'Interceptor name',
+        },
         options: [
           {
             name: 'flat',
@@ -1067,9 +1119,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'interface',
-        command: 'interface [name] [type]',
+        command: 'interface',
         shortDescription:
           'Creates a new, generic interface definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the interface.',
+          label: 'Interface name',
+        },
         options: [
           {
             name: 'name',
@@ -1100,9 +1156,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'library',
-        command: 'library [name]',
+        command: 'library',
         shortDescription:
           'Creates a new, generic library project in the current workspace.',
+        arguments: {
+          placeholder: 'The name of the library.',
+          label: 'Library name',
+        },
         options: [
           {
             name: 'entry-file',
@@ -1154,9 +1214,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'module',
-        command: 'module [name]',
+        command: 'module',
         shortDescription:
           'Creates a new, generic NgModule definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the ngModule',
+          label: 'Module name',
+        },
         options: [
           {
             name: 'flat',
@@ -1207,9 +1271,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'pipe',
-        command: 'pipe [name]',
+        command: 'pipe',
         shortDescription:
           'Creates a new, generic pipe definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the pipe.',
+          label: 'Pipe name',
+        },
         options: [
           {
             name: 'export',
@@ -1265,9 +1333,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'resolver',
-        command: 'resolver [name]',
+        command: 'resolver',
         shortDescription:
           'Generates a new, generic resolver definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the new resolver.',
+          label: 'Resolver name',
+        },
         options: [
           {
             name: 'flat',
@@ -1306,9 +1378,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'service',
-        command: 'service [name]',
+        command: 'service',
         shortDescription:
           'Creates a new, generic service definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the service.',
+          label: 'Service name',
+        },
         options: [
           {
             name: 'flat',
@@ -1362,9 +1438,13 @@ export const RAW_NG_COMMANDS = [
       },
       {
         name: 'web-worker',
-        command: 'web-worker [name]',
+        command: 'web-worker',
         shortDescription:
           'Creates a new, generic web worker definition in the given project.',
+        arguments: {
+          placeholder: 'The name of the web-worker.',
+          label: 'Web-worker name',
+        },
         options: [
           {
             name: 'name',
@@ -1392,7 +1472,7 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'lint',
-    command: 'ng lint [project]',
+    command: 'ng lint',
     shortDescription:
       'Runs linting tools on Angular application code in a given project folder.',
     longDescriptionRelativePath:
@@ -1401,6 +1481,11 @@ export const RAW_NG_COMMANDS = [
       'The command takes an optional project name, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, executes the `lint` builder for all projects.\n\nTo use the `ng lint` command, use `ng add` to add a package that implements linting capabilities. Adding the package automatically updates your workspace configuration, adding a lint [CLI builder](guide/cli-builder).\nFor example:\n\n```json\n"projects": {\n  "my-project": {\n    ...\n    "architect": {\n      ...\n      "lint": {\n        "builder": "@angular-eslint/builder:lint",\n        "options": {}\n      }\n    }\n  }\n}\n```\n',
     aliases: [],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The name of the project to build. Can be an application or a library.',
+      label: 'Project name',
+    },
     options: [
       {
         name: 'configuration',
@@ -1425,7 +1510,7 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'new',
-    command: 'ng new [name]',
+    command: 'ng new',
     shortDescription: 'Creates a new Angular workspace.',
     longDescriptionRelativePath:
       '@angular/cli/src/commands/new/long-description.md',
@@ -1433,6 +1518,10 @@ export const RAW_NG_COMMANDS = [
       "Creates and initializes a new Angular application that is the default project for a new workspace.\n\nProvides interactive prompts for optional configuration, such as adding routing support.\nAll prompts can safely be allowed to default.\n\n- The new workspace folder is given the specified project name, and contains configuration files at the top level.\n\n- By default, the files for a new initial application (with the same name as the workspace) are placed in the `src/` subfolder.\n- The new application's configuration appears in the `projects` section of the `angular.json` workspace configuration file, under its project name.\n\n- Subsequent applications that you generate in the workspace reside in the `projects/` subfolder.\n\nIf you plan to have multiple applications in the workspace, you can create an empty workspace by using the `--no-create-application` option.\nYou can then use `ng generate application` to create an initial application.\nThis allows a workspace name different from the initial app name, and ensures that all applications reside in the `/projects` subfolder, matching the structure of the configuration file.\n",
     aliases: ['n'],
     deprecated: false,
+    arguments: {
+      placeholder: 'The name of the new workspace and initial project.',
+      label: 'Workspace name',
+    },
     options: [
       {
         name: 'collection',
@@ -1615,11 +1704,16 @@ export const RAW_NG_COMMANDS = [
   //   },
   {
     name: 'serve',
-    command: 'ng serve [project]',
+    command: 'ng serve',
     shortDescription:
       'Builds and serves your application, rebuilding on file changes.',
     aliases: ['s'],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The name of the project to build. Can be an application or a library.',
+      label: 'Project name',
+    },
     options: [
       {
         name: 'allowed-hosts',
@@ -1743,7 +1837,7 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'test',
-    command: 'ng test [project]',
+    command: 'ng test',
     shortDescription: 'Runs unit tests in a project.',
     longDescriptionRelativePath:
       '@angular/cli/src/commands/test/long-description.md',
@@ -1751,6 +1845,11 @@ export const RAW_NG_COMMANDS = [
       'Takes the name of the project, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, it will execute for all projects.\n',
     aliases: ['t'],
     deprecated: false,
+    arguments: {
+      placeholder:
+        'The name of the project to build. Can be an application or a library.',
+      label: 'Project name',
+    },
     options: [
       {
         name: 'browsers',
@@ -1871,7 +1970,7 @@ export const RAW_NG_COMMANDS = [
   },
   {
     name: 'update',
-    command: 'ng update [packages..]',
+    command: 'ng update',
     shortDescription: 'Updates your workspace and its dependencies',
     longDescriptionRelativePath:
       '@angular/cli/src/commands/update/long-description.md',
@@ -1879,6 +1978,10 @@ export const RAW_NG_COMMANDS = [
       'Perform a basic update to the current stable release of the core framework and CLI by running the following command.\n\n```\nng update @angular/cli @angular/core\n```\n\nTo update to the next beta or pre-release version, use the `--next` option.\n\nTo update from one major version to another, use the format\n\n```\nng update @angular/cli@^<major_version> @angular/core@^<major_version>\n```\n\nWe recommend that you always update to the latest patch version, as it contains fixes we released since the initial major release.\nFor example, use the following command to take the latest 10.x.x version and use that to update.\n\n```\nng update @angular/cli@^10 @angular/core@^10\n```\n\nFor detailed information and guidance on updating your application, see the interactive [Angular Update Guide](https://update.angular.io/).\n',
     aliases: [],
     deprecated: false,
+    arguments: {
+      placeholder: 'The names of package(s) to update.',
+      label: 'Packages name',
+    },
     options: [
       {
         name: 'allow-dirty',

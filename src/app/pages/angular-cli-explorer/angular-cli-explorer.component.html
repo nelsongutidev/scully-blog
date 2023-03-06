@@ -25,6 +25,21 @@
     </button>
   </div>
 
+  <mat-form-field
+    *ngIf="
+      commandCtrl.value?.command && commandCtrl.value?.arguments as argument
+    "
+    class="w-full"
+    appearance="fill"
+  >
+    <mat-label>{{ argument.label }}</mat-label>
+    <input
+      matInput
+      [placeholder]="argument?.placeholder"
+      [formControl]="commandNameCtrl"
+    />
+  </mat-form-field>
+
   <ng-container
     *ngIf="commandCtrl.value?.subcommands?.length > 0; else commandOptions"
   >
@@ -38,6 +53,24 @@
           {{ subCommand.shortDescription }}
         </mat-option>
       </mat-select>
+    </mat-form-field>
+
+    <ng-container *ngIf="subCommand$ | async"></ng-container>
+
+    <mat-form-field
+      *ngIf="
+        subCommandCtrl.value?.command &&
+        subCommandCtrl.value?.arguments as argument
+      "
+      class="w-full"
+      appearance="fill"
+    >
+      <mat-label>{{ argument.label }}</mat-label>
+      <input
+        matInput
+        [placeholder]="argument?.placeholder"
+        [formControl]="commandNameCtrl"
+      />
     </mat-form-field>
 
     <mat-form-field
@@ -81,7 +114,9 @@
 
 <section class="flex flex-col items-center my-4">
   <div class="w-full max-w-3xl px-4">
-    <app-terminal [command]="(command$ | async) || ''"></app-terminal>
+    <app-terminal
+      [command]="((command$ | async) || '') + ((commandOptions$ | async) || '')"
+    ></app-terminal>
   </div>
 </section>
 
