@@ -97,8 +97,8 @@ export class AngularCliExplorerComponent {
       data: { description: this.commandCtrl.value.longDescription },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log('The dialog was closed');
+    // });
   }
 }
