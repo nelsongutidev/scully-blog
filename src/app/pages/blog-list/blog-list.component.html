@@ -5,49 +5,49 @@
 </h1>
 
 <section class="text-gray-600 body-font overflow-hidden">
-  <div class="container px-12 mx-auto lg:px-24 xl:px-64">
-    <div class="-my-8 divide-y-2 divide-gray-100 mb-6">
-      <ng-container *ngFor="let post of posts$ | async">
-        <div class="py-8 flex flex-wrap md:flex-nowrap">
-          <div class="flex-grow">
-            <div class="flex justify-between mb-2">
-              <div class="flex space-x-1">
-                <span
-                  *ngFor="let tag of post.tags; last as isLast"
-                  class="font-semibold title-font text-gray-700"
-                  >{{ tag }} <span *ngIf="!isLast">|</span>
-                </span>
-              </div>
-              <span class="mt-1 text-gray-500 text-sm">{{
-                post.date | date
-              }}</span>
+  <div class="container px-4 md:px-12 lg:px-24 mx-auto max-w-7xl">
+    <ng-container *ngFor="let post of posts$ | async">
+      <div
+        class="p-8 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg mb-8"
+      >
+        <div class="flex-grow">
+          <div class="flex justify-between mb-2">
+            <div class="flex space-x-1">
+              <span
+                *ngFor="let tag of post.tags; last as isLast"
+                class="font-semibold title-font text-gray-700"
+                >{{ tag }} <span *ngIf="!isLast">|</span>
+              </span>
             </div>
-            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
-              <a [routerLink]="post.route">{{ post.title }}</a>
-            </h2>
-            <p class="leading-relaxed">
-              {{ post.description }}
-            </p>
-            <a
-              [routerLink]="post.route"
-              class="text-blue-600 dark:text-blue-500 inline-flex items-center mt-4"
-              >Read
-              <svg
-                class="w-4 h-4 ml-2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <span class="mt-1 text-gray-500 text-sm">{{
+              post.date | date
+            }}</span>
           </div>
+          <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+            <a [routerLink]="post.route">{{ post.title }}</a>
+          </h2>
+          <p class="leading-relaxed">
+            {{ post.description }}
+          </p>
+          <a
+            [routerLink]="post.route"
+            class="text-blue-600 dark:text-blue-500 inline-flex items-center mt-4"
+            >Read
+            <svg
+              class="w-4 h-4 ml-2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
         </div>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
   </div>
 </section>
