@@ -25,6 +25,21 @@
     </button>
   </div>
 
+  <mat-form-field
+    *ngIf="
+      commandCtrl.value?.command && commandCtrl.value?.arguments as argument
+    "
+    class="w-full"
+    appearance="fill"
+  >
+    <mat-label>{{ argument.label }}</mat-label>
+    <input
+      matInput
+      [placeholder]="argument?.placeholder"
+      [formControl]="commandNameCtrl"
+    />
+  </mat-form-field>
+
   <ng-container
     *ngIf="commandCtrl.value?.subcommands?.length > 0; else commandOptions"
   >
@@ -38,6 +53,24 @@
           {{ subCommand.shortDescription }}
         </mat-option>
       </mat-select>
+    </mat-form-field>
+
+    <ng-container *ngIf="subCommand$ | async"></ng-container>
+
+    <mat-form-field
+      *ngIf="
+        subCommandCtrl.value?.command &&
+        subCommandCtrl.value?.arguments as argument
+      "
+      class="w-full"
+      appearance="fill"
+    >
+      <mat-label>{{ argument.label }}</mat-label>
+      <input
+        matInput
+        [placeholder]="argument?.placeholder"
+        [formControl]="commandNameCtrl"
+      />
     </mat-form-field>
 
     <mat-form-field
@@ -68,6 +101,7 @@
     >
       <mat-label>Options</mat-label>
       <mat-select [formControl]="optionCtrl">
+        <mat-option>None</mat-option>
         <mat-option
           *ngFor="let option of commandCtrl?.value?.options | filterOption"
           [value]="option"
@@ -81,7 +115,9 @@
 
 <section class="flex flex-col items-center my-4">
   <div class="w-full max-w-3xl px-4">
-    <app-terminal [command]="(command$ | async) || ''"></app-terminal>
+    <app-terminal
+      [command]="((command$ | async) || '') + ((commandOptions$ | async) || '')"
+    ></app-terminal>
   </div>
 </section>
 
@@ -90,11 +126,16 @@
     <div
       class="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 w-full"
     >
-      <h1
-        class="mb-2 text-4xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-      >
-        Description
-      </h1>
+      <div class="flex justify-between">
+        <h1
+          class="mb-2 text-4xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+        >
+          Description
+        </h1>
+        <button class="flex" type="button" mat-dialog-close>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 w-full">
         <markdown class="markdown" [data]="data.description"> </markdown>
       </p>

@@ -9,13 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NG_COMMANDS } from './data/angular-data';
 import { FilterOptionPipe } from './data/filter-option.pipe';
-import { MarkdownComponent, MarkdownModule } from 'ngx-markdown';
-import {
-  MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogRef,
-  MatDialogModule,
-} from '@angular/material/dialog';
+import { MarkdownModule } from 'ngx-markdown';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'app-angular-cli-explorer',
   standalone: true,
@@ -30,6 +26,7 @@ import {
     MarkdownModule,
     MatIconModule,
     MatDialogModule,
+    MatInputModule,
   ],
   templateUrl: './angular-cli-explorer.component.html',
   styles: [],
@@ -44,15 +41,17 @@ export class AngularCliExplorerComponent {
   optionCtrl = new FormControl();
   subCommandCtrl = new FormControl();
   subcommandOptionCtrl = new FormControl();
+  commandNameCtrl = new FormControl();
   commands = NG_COMMANDS;
 
-  command$: Observable<string> = combineLatest(
+  commandOptions$: Observable<string> = combineLatest(
     this.commandCtrl.valueChanges.pipe(startWith(null)),
     this.subCommandCtrl.valueChanges.pipe(startWith(null)),
     this.optionCtrl.valueChanges.pipe(startWith(null)),
-    this.subcommandOptionCtrl.valueChanges.pipe(startWith(null))
+    this.subcommandOptionCtrl.valueChanges.pipe(startWith(null)),
+    this.commandNameCtrl.valueChanges.pipe(startWith(null))
   ).pipe(
-    map(([command, subCommand, option, subcommandOption]) => {
+    map(([command, subCommand, option, subcommandOption, commandName]) => {
       subCommand =
         subCommand?.parentCommand === command?.name ? subCommand : null;
       option = option?.parentCommand === command?.name ? option : null;
@@ -69,9 +68,25 @@ export class AngularCliExplorerComponent {
         }`;
       }
 
-      return `${command?.command || ''} ${
-        subCommand?.command || ''
-      } ${_option}`;
+      return ` ${subCommand?.command || ''} ${commandName || ''} ${_option}`;
+    })
+  );
+
+  command$ = this.commandCtrl.valueChanges.pipe(
+    map((command) => {
+      this.commandNameCtrl.reset();
+      this.subCommandCtrl.reset();
+      this.optionCtrl.reset();
+      this.subcommandOptionCtrl.reset();
+
+      return command?.command || '';
+    })
+  );
+
+  subCommand$ = this.subCommandCtrl.valueChanges.pipe(
+    map(() => {
+      this.commandNameCtrl.reset();
+      this.subcommandOptionCtrl.reset();
     })
   );
 
@@ -82,8 +97,8 @@ export class AngularCliExplorerComponent {
       data: { description: this.commandCtrl.value.longDescription },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log('The dialog was closed');
+    // });
   }
 }
