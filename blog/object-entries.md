@@ -4,6 +4,7 @@ date: "September 1, 2019"
 published: true
 tags: ["JavaScript", "Objects"]
 description: "Object.fromEntries() is here and this is why its awesome"
+image: "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNvbXB1dGVyc3xlbnwwfHwwfHw&&fm=jpg&w=400&fit=max"
 ---
 
 # Object.fromEntries()

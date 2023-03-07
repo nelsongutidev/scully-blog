@@ -4,6 +4,7 @@ date: "Feb 21, 2019"
 published: true
 description: "Two usually forgotten yet handy methods to keep in your bag of tricks"
 tags: ["JavaScript", "Arrays"]
+image: "https://plus.unsplash.com/premium_photo-1665203652761-8df896b837a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&fm=jpg&w=400&fit=max"
 ---
 
 # The .every() and .some() Array Methods in JS: The Unpopular Pair

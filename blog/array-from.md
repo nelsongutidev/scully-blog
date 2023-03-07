@@ -4,6 +4,7 @@ date: "Jan 27, 2019"
 published: true
 tags: ["JavaScript", "Arrays"]
 description: "Array.from() is an awesome method introduced with ES6. This post includes practical examples of how I use it."
+image: "https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fm=jpg&w=400&fit=max"
 ---
 
 # Awesome things that can be done with Array.from()

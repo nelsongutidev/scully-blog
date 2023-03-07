@@ -4,6 +4,7 @@ description: "Angular's built-in router provides 16 router events to track its l
 date: "Dec 7, 2022"
 tags: ["Angular"]
 published: true
+image: "https://miro.medium.com/max/700/1*Yk64-4ui8lmGEn2RFyNErQ.jpeg"
 ---
 
 # Navigating Angular Router Events: The Sweet Sixteen

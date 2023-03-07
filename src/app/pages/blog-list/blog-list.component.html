@@ -4,11 +4,49 @@
   Blog
 </h1>
 
-<section class="text-gray-600 body-font overflow-hidden">
-  <div class="container px-12 mx-auto lg:px-24 xl:px-64">
-    <div class="-my-8 divide-y-2 divide-gray-100 mb-6">
-      <ng-container *ngFor="let post of posts$ | async">
-        <div class="py-8 flex flex-wrap md:flex-nowrap">
+<section class="md:py-8 pt-4 pb-8 md:px-8 px-4">
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
+    <ng-container *ngFor="let post of posts$ | async">
+      <div class="p-6 bg-white rounded-xl">
+        <a [routerLink]="post.route" class="group">
+          <div class="overflow-hidden">
+            <img
+              [src]="post.image"
+              class="w-full h-auto hover:scale-105 transition transition-all duration-200 ease-in-out"
+              alt="Sample Cover"
+            />
+          </div>
+
+          <h3
+            class="mt-6 leading-normal text-gray-800 group-hover:text-blue-600 font-semibold text-lg lg:text-2xl line-clamp-3 transition translation-all duration-200 ease-in-out"
+            title="Lorem Ipsum is simply dummy text of the printing"
+          >
+            {{ post.title }}
+          </h3>
+        </a>
+
+        <div class="mt-6">
+          <div class="grid">
+            <time class="text-gray-600" datetime="2021-11-06T08:29:56+00:00">
+              {{ post.date }}
+            </time>
+          </div>
+
+          <p class="mt-6 leading-normal line-clamp-3 text-lg text-gray-600">
+            {{ post.description }}}
+          </p>
+        </div>
+
+        <a
+          [routerLink]="post.route"
+          class="mt-6 inline-block text-blue-600 hover:text-blue-400"
+        >
+          Read More
+        </a>
+      </div>
+    </ng-container>
+  </div>
+  <!-- <div class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="flex-grow">
             <div class="flex justify-between mb-2">
               <div class="flex space-x-1">
@@ -46,8 +84,5 @@
               </svg>
             </a>
           </div>
-        </div>
-      </ng-container>
-    </div>
-  </div>
+        </div> -->
 </section>
