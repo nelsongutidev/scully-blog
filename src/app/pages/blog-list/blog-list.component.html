@@ -23,7 +23,9 @@
               post.date | date
             }}</span>
           </div>
-          <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+          <h2
+            class="text-2xl font-medium text-gray-900 title-font mb-2 hover:underline"
+          >
             <a [routerLink]="post.route">{{ post.title }}</a>
           </h2>
           <p class="leading-relaxed">
