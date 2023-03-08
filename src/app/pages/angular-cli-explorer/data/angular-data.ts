@@ -1,23 +1,46 @@
-export type Command1 = {
+export type Command = {
   name: string;
   command: string;
   shortDescription: string;
-  longDescriptionRelativePath: string;
-  longDescription: string;
-  aliases: string[];
+  longDescriptionRelativePath?: string;
+  longDescription?: string;
+  aliases: string[] | [];
   deprecated: boolean;
-  options: Option1[];
+  options: Option[];
+  arguments?: {
+    placeholder: string;
+    label: string;
+  };
+  subcommands?: SubCommand[];
 };
 
-export type Option1 = {
+export type SubCommand = {
+  name: string;
+  command: string;
+  shortDescription: string;
+  aliases: string[] | [];
+  deprecated: boolean;
+  options: Option[];
+  arguments?: {
+    placeholder: string;
+    label: string;
+  };
+  parentCommand?: string;
+};
+
+export type Option = {
   name: string;
   type: string;
   description: string;
   positional?: number;
-  default?: boolean;
+  default?: boolean | string | number | [];
+  aliases?: string[];
+  deprecated?: boolean | string;
+  enum?: string[];
+  parentCommand?: string;
 };
 
-export const RAW_NG_COMMANDS = [
+export const RAW_NG_COMMANDS: Command[] = [
   {
     name: 'add',
     command: 'ng add ',
