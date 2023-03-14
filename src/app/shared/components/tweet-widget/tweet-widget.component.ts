@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Tweet, TWEETS } from '../../constants/tweets';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+
 @Component({
   selector: 'app-tweet-widget',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScullyLibModule],
   templateUrl: './tweet-widget.component.html',
   styles: [],
 })

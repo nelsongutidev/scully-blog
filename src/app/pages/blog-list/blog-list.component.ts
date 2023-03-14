@@ -14,10 +14,10 @@ import { filter, map, Observable } from 'rxjs';
 export class BlogListComponent {
   scullyRouteService = inject(ScullyRoutesService);
   posts$: Observable<ScullyRoute[]> = this.scullyRouteService.available$.pipe(
-    map((routes) =>
-      routes
-        .filter(({ published }) => published)
-        .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1))
-    )
+    map((routes) => {
+      return routes
+        .filter(({ published, route }) => published && route.includes('/blog/'))
+        .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
+    })
   );
 }
