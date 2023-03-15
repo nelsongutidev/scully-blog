@@ -35,6 +35,16 @@ const routes: Routes = [
     title: 'Tips',
   },
   {
+    path: 'tips/1630618252693979165',
+    redirectTo: '/tips/ng-update',
+    pathMatch: 'full',
+  },
+  {
+    path: 'tips/1625586017334878238',
+    redirectTo: '/tips/title-case-pipe',
+    pathMatch: 'full',
+  },
+  {
     path: 'tips/:tweetId',
     component: TipComponent,
   },
