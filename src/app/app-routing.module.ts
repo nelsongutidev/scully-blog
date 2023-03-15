@@ -9,8 +9,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { TipComponent } from './pages/tip/tip.component';
 import { TipsComponent } from './pages/tips/tips.component';
 
-import { TweetWidgetComponent } from './shared/components/tweet-widget/tweet-widget.component';
-
 const routes: Routes = [
   {
     path: '',

@@ -1,7 +1,7 @@
 <div class="md:max-w-md max-w-sm rounded overflow-hidden shadow-lg">
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2 flex justify-between">
-      <span>{{ tweet.title }}</span>
+      <span>{{ tip.title }}</span>
       <span
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +20,12 @@
       </span>
     </div>
     <p class="text-gray-700 text-base md:h-24 h-auto">
-      {{ tweet.description }}
+      {{ tip.description }}
     </p>
   </div>
   <div class="px-6 pt-4 pb-2">
     <span
-      *ngFor="let tag of tweet.tags"
+      *ngFor="let tag of tip.tags"
       class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
       >{{ tag }}</span
     >

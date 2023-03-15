@@ -30,9 +30,9 @@
 </p>
 
 <main class="md:py-8 flex flex-wrap justify-center gap-6 mb-6 px-4">
-  <ng-container *ngFor="let tweet of tips$ | async">
-    <a [routerLink]="tweet.route" [state]="tweet">
-      <app-tweet-card class="px-4" [tweet]="tweet"></app-tweet-card>
+  <ng-container *ngFor="let tip of tips$ | async">
+    <a [routerLink]="tip.route" [state]="tip">
+      <app-tip-card class="px-4" [tip]="tip"></app-tip-card>
     </a>
   </ng-container>
 </main>

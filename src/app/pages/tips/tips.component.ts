@@ -1,25 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { ScullyRoutesService } from '@scullyio/ng-lib';
 import { map, Observable } from 'rxjs';
-import { TweetCardComponent } from 'src/app/shared/components/tweet-card/tweet-card.component';
-import { TweetWidgetComponent } from 'src/app/shared/components/tweet-widget/tweet-widget.component';
-import { Tweet, TWEETS } from 'src/app/shared/constants/tweets';
+import { TipCardComponent } from 'src/app/shared/components/tip-card/tip-card.component';
+
+export type Tip = {
+  title: string;
+  description: string;
+  src: string;
+  srcLarge: string;
+  alt: string;
+  tweetId: string;
+  tags: Array<'Angular' | 'Javascript' | 'CLI'>;
+};
+
 @Component({
   selector: 'app-tips',
   templateUrl: './tips.component.html',
   styles: [],
   standalone: true,
-  imports: [
-    CommonModule,
-    TweetWidgetComponent,
-    TweetCardComponent,
-    RouterModule,
-  ],
+  imports: [CommonModule, TipCardComponent, RouterModule],
 })
 export class TipsComponent {
-  tweets: Tweet[] = TWEETS;
   scullyRouteService = inject(ScullyRoutesService);
   tips$: Observable<any[]> = this.scullyRouteService.available$.pipe(
     map((routes) => {
