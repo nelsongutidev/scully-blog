@@ -29,5 +29,3 @@ To update to the next beta or pre-release version, use the `--next` option
 ```bash
 ng update @angular/core @angular/cli --next
 ```
-
-<img style="display:none" src="https://pbs.twimg.com/media/FqEcqjIaIAE-luf?format=jpg&name=small" alt="ng update" width="100%" />
