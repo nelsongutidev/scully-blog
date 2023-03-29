@@ -11,9 +11,9 @@ date: "Mar 28, 2023"
 
 ## SlicePipe
 
-Angular provides the SlicePipe, which creates a new Array or String containing a subset (slice) of the elements. ( SlicePipe is also exported the CommonModule)
+Angular provides the SlicePipe, which creates a new Array or String containing a subset (slice) of the elements. ( SlicePipe is also exported from the CommonModule)
 
-## Arrays
+### Arrays
 
 Example on arrays:
 
@@ -40,7 +40,7 @@ Produces the following:
 </ul>
 ```
 
-## Strings
+### Strings
 
 Example on strings:
 
