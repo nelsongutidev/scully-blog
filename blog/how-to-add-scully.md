@@ -111,8 +111,8 @@ Scully has pre-rendered the content for each and every route in your app, and se
 
 If you see this error, it could possibly be one of two things:
 
-1. You did not add the defaultProject property with the correct project's name in the angular.json file.
-2. You did not update the scully.[PROJECT_NAME].config.ts with the proper values for the projectName or distFolder properties. Make sure you have the correct values there.
+1. You did not add the `defaultProject` property with the correct project's name in the angular.json file.
+2. You did not update the `scully.[PROJECT_NAME].config.ts` with the proper values for the `projectName` or `distFolder` properties. Make sure you have the correct values there.
 
 Note: You can open up a terminal and serve the app without Scully as well, using the Angular's CLI command `ng serve`, to compare and contrast how the app behaves with and without Scully's build process.
 
@@ -125,18 +125,18 @@ For example, let's say you have an app with the following routes:
 After having Scully run, we would see a dist folder with the following structure:
 Folder Structure
 
-```
+```yaml
 dist
-  /static
-    /about
-      index.html
-    /contact
-      index.html
-    /events
-      index.html
-  404.html
-  index.html
-  ...
+/static
+/about
+index.html
+/contact
+index.html
+/events
+index.html
+404.html
+index.html
+...
 ```
 
 By adding Scully, your application will become faster, because serving static html files speeds up First Contentful Paint by providing a pre-rendered asset and allowing for the static asset to be cached in a CDN. You can even do a fun experiment and run your app with Javascript disabled, and you will notice the app still renders.
