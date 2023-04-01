@@ -47,9 +47,9 @@ import { ScullyLibModule } from "@scullyio/ng-lib";
 export class AppModule {}
 ```
 
-⚠️ Note: At the moment of the writing of this post, support for applications that are bootstrapped via a standalone component and using provideRouter standalone API is not available yet.
+> ⚠️ Note: At the moment of the writing of this post, support for applications that are bootstrapped via a standalone component and using provideRouter standalone API is not available yet.
 
-3. Create a scully.[PROJECT_NAME].config.ts, replacing [PROJECT_NAME], with the name of your Angular project. Then add the content of the Scully config file as follows:
+3. Create a `scully.[PROJECT_NAME].config.ts`, replacing `[PROJECT_NAME]`, with the name of your Angular project. Then add the content of the Scully config file as follows:
 
 ```javascript
 import { ScullyConfig } from "@scullyio/scully";
@@ -118,7 +118,7 @@ Note: You can open up a terminal and serve the app without Scully as well, using
 
 ## What Did Scully Just Do?
 
-In order to get a better understanding of what Scully did, go to your current project's dist folder. Because of the configuration added on the Scully config file ( scully.[PROJECT_NAME].config.ts ), the outDir property we configured tells Scully to render all the html files generated under /dist/static/ path. If you open up the content in that folder, you will see a folder per route, each containing at least one index.html that Scully created for you, ready to be rendered.
+In order to get a better understanding of what Scully did, go to your current project's dist folder. Because of the configuration added on the Scully config file ( `scully.[PROJECT_NAME].config.ts` ), the outDir property we configured tells Scully to render all the html files generated under /dist/static/ path. If you open up the content in that folder, you will see a folder per route, each containing at least one index.html that Scully created for you, ready to be rendered.
 
 For example, let's say you have an app with the following routes:
 
