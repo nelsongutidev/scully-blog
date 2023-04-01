@@ -127,19 +127,19 @@ Folder Structure
 
 ```yaml
 dist
-  /static
-    /about
-      index.html
-    /contact
-      index.html
-    /events
-      index.html
-  404.html
-  index.html
-  ...
+/static
+/about
+index.html
+/contact
+index.html
+/events
+index.html
+404.html
+index.html
+...
 ```
 
-By adding Scully, your application will become faster, because serving static html files speeds up First Contentful Paint by providing a pre-rendered asset and allowing for the static asset to be cached in a CDN. You can even do a fun experiment and run your app with Javascript disabled, and you will notice the app still renders.
+By adding Scully, your application will become faster, because serving static html files speeds up [First Contentful Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_contentful_paint) by providing a pre-rendered asset and allowing for the static asset to be cached in a CDN. You can even do a fun experiment and run your app with Javascript disabled, and you will notice the app still renders.
 
 ## Scully's Benefits
 
@@ -153,4 +153,4 @@ Now that we have our app running with Scully, we can see first hand some of its 
 ## The Future Is Bright
 
 Scully is a great option for static site generation with Angular, allowing you to enhance your apps using pre-rendering. This is great for static content apps, like blogs, content creation websites or portfolios. Nonetheless, web applications with more functionality require code to be downloaded and don't get the all benefits of static site generators (as they still need to download and execute JavaScript to work as expected).
-Fortunately, the Angular team is working on hydration and server-side rendering usability improvements for the next release. It will be fascinating to see how this will improve Angular apps, and moreover, how it could be used to make Scully even more powerful.
+Fortunately, the Angular team is working on [hydration and server-side rendering usability improvements](https://angular.io/guide/roadmap#explore-hydration-and-server-side-rendering-usability-improvements) for the next release. It will be fascinating to see how this will improve Angular apps, and moreover, how it could be used to make Scully even more powerful.
