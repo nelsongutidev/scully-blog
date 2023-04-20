@@ -8,6 +8,12 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ScullyLibModule, RouterModule],
   templateUrl: './tip.component.html',
-  styles: [],
+  styles: [
+    `
+      pre {
+        font-size: 1rem !important;
+      }
+    `,
+  ],
 })
 export class TipComponent {}
