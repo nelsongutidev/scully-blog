@@ -24,7 +24,7 @@ In order to be able to create an individual HTML file for each of your app's rou
 
 ## Getting Started
 
-Install the following packages by running the following command:
+1. Install the following packages by running the following command:
 
 ```bash
 npm i @scullyio/scully @scullyio/ng-lib @scullyio/scully-plugin-puppeteer
