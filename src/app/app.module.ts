@@ -1,9 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-  BrowserModule,
-  provideClientHydration,
-} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +22,7 @@ import { MarkdownModule } from 'ngx-markdown';
     FooterComponent,
     MarkdownModule.forRoot(),
   ],
-  providers: [provideClientHydration()],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
