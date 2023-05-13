@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SvgSitenameAnimationComponent } from '../svg-sitename-animation/svg-sitename-animation.component';
@@ -11,5 +11,6 @@ import { SvgSitenameAnimationComponent } from '../svg-sitename-animation/svg-sit
   styles: [],
 })
 export class FooterComponent {
+  VERSION = VERSION;
   currentYear = new Date().getFullYear();
 }

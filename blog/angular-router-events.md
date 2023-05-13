@@ -8,7 +8,7 @@ published: true
 
 # Navigating Angular Router Events: The Sweet Sixteen
 
-![https://miro.medium.com/max/700/1*Yk64-4ui8lmGEn2RFyNErQ.jpeg](https://miro.medium.com/max/700/1*Yk64-4ui8lmGEn2RFyNErQ.jpeg)
+![https://miro.medium.com/v2/resize:fit:720/format:webp/1*7rmCAnxnTr7ShGOsCvZ8BQ.png](https://miro.medium.com/v2/resize:fit:720/format:webp/1*7rmCAnxnTr7ShGOsCvZ8BQ.png)
 
 <span>Photo by [Alexander Andrews](https://unsplash.com/@alex_andrews) on [Unsplash](https://unsplash.com/)</span>
 

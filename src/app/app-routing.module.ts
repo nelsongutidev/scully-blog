@@ -6,9 +6,8 @@ import { BlogListComponent } from './pages/blog-list/blog-list.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { TipComponent } from './pages/tip/tip.component';
 import { TipsComponent } from './pages/tips/tips.component';
-
-import { TweetWidgetComponent } from './shared/components/tweet-widget/tweet-widget.component';
 
 const routes: Routes = [
   {
@@ -36,8 +35,18 @@ const routes: Routes = [
     title: 'Tips',
   },
   {
+    path: 'tips/1630618252693979165',
+    redirectTo: '/tips/ng-update',
+    pathMatch: 'full',
+  },
+  {
+    path: 'tips/1625586017334878238',
+    redirectTo: '/tips/title-case-pipe',
+    pathMatch: 'full',
+  },
+  {
     path: 'tips/:tweetId',
-    component: TweetWidgetComponent,
+    component: TipComponent,
   },
   {
     path: 'angular-cli-explorer',
