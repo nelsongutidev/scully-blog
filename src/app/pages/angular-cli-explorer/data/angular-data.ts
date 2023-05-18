@@ -1654,6 +1654,13 @@ export const RAW_NG_COMMANDS = [
           'Do not generate "spec.ts" test files for the new project.',
       },
       {
+        name: 'standalone',
+        type: 'boolean',
+        default: false,
+        description:
+          'Creates an application based upon the standalone API, without NgModules.',
+      },
+      {
         name: 'strict',
         type: 'boolean',
         default: true,
