@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ScullyRoutesService } from '@scullyio/ng-lib';
-import { map, Observable } from 'rxjs';
+import { Router, RouterModule } from '@angular/router';
+import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { concatMap, map, Observable, of, switchMap } from 'rxjs';
 import { TipCardComponent } from 'src/app/shared/components/tip-card/tip-card.component';
 
 export type Tip = {
@@ -23,12 +23,18 @@ export type Tip = {
   imports: [CommonModule, TipCardComponent, RouterModule],
 })
 export class TipsComponent {
+  constructor(private readonly router: Router) {}
   scullyRouteService = inject(ScullyRoutesService);
-  tips$: Observable<any[]> = this.scullyRouteService.available$.pipe(
+  tips$: Observable<any> = this.scullyRouteService.available$.pipe(
     map((routes) => {
       return routes
         .filter(({ published, route }) => published && route.includes('/tips/'))
         .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
+    }),
+    concatMap((routes) => {
+      return this.router.url.includes('es')
+        ? of(routes.filter(({ route }) => route.includes('tips/es')))
+        : of(routes.filter(({ route }) => !route.includes('tips/es')));
     })
   );
 }

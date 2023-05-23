@@ -28,10 +28,16 @@ export const config: ScullyConfig = {
         folder: './blog',
       },
     },
-    '/tips/:tweetId': {
+    '/tips/:id': {
       type: 'contentFolder',
-      tweetId: {
+      id: {
         folder: './tips',
+      },
+    },
+    '/tips/es:id': {
+      type: 'contentFolder',
+      id: {
+        folder: './tips/es',
       },
     },
   },

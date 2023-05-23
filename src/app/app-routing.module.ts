@@ -30,6 +30,15 @@ const routes: Routes = [
     title: 'About',
   },
   {
+    path: 'tips/es',
+    pathMatch: 'full',
+    component: TipsComponent,
+  },
+  {
+    path: 'tips/es:id',
+    component: TipComponent,
+  },
+  {
     path: 'tips',
     component: TipsComponent,
     title: 'Tips',
@@ -45,7 +54,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'tips/:tweetId',
+    path: 'tips/:id',
     component: TipComponent,
   },
   {
