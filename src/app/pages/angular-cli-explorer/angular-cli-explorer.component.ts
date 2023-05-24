@@ -7,7 +7,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, map, Observable, startWith } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NG_COMMANDS } from './data/angular-data';
+import { Command, NG_COMMANDS, Option, SubCommand } from './data/angular-data';
 import { FilterOptionPipe } from './data/filter-option.pipe';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatInputModule } from '@angular/material/input';
@@ -51,25 +51,37 @@ export class AngularCliExplorerComponent {
     this.subcommandOptionCtrl.valueChanges.pipe(startWith(null)),
     this.commandNameCtrl.valueChanges.pipe(startWith(null))
   ).pipe(
-    map(([command, subCommand, option, subcommandOption, commandName]) => {
-      subCommand =
-        subCommand?.parentCommand === command?.name ? subCommand : null;
-      option = option?.parentCommand === command?.name ? option : null;
-      subcommandOption =
-        subcommandOption?.parentCommand === subCommand?.name
-          ? subcommandOption
-          : null;
+    map(
+      ([command, subCommand, option, subcommandOption, commandName]: [
+        Command,
+        SubCommand,
+        Option[],
+        Option[],
+        string
+      ]) => {
+        const selectecSubCommand =
+          subCommand?.parentCommand === command?.name ? subCommand : null;
 
-      let _option = `${option?.name ? `--${option.name}` : ''}`;
+        const selectedOption =
+          option?.[0]?.parentCommand === command?.name
+            ? option?.map(({ name }) => `--${name}`).join(' ')
+            : null;
 
-      if (command?.subcommands?.length > 0) {
-        _option = `${
-          subcommandOption?.name ? `--${subcommandOption?.name}` : ''
+        const selectedSubcommandOption =
+          subcommandOption?.[0].parentCommand === selectecSubCommand?.name
+            ? subcommandOption?.map(({ name }: any) => `--${name}`).join(' ')
+            : null;
+
+        const selectedOptions =
+          (command?.subcommands || []).length > 0
+            ? selectedSubcommandOption
+            : selectedOption;
+
+        return ` ${subCommand?.command || ''} ${commandName || ''} ${
+          selectedOptions || ''
         }`;
       }
-
-      return ` ${subCommand?.command || ''} ${commandName || ''} ${_option}`;
-    })
+    )
   );
 
   command$ = this.commandCtrl.valueChanges.pipe(

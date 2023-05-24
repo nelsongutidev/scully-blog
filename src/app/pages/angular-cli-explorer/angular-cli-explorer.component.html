@@ -82,7 +82,7 @@
       appearance="fill"
     >
       <mat-label>Subcommand Options</mat-label>
-      <mat-select [formControl]="subcommandOptionCtrl">
+      <mat-select [formControl]="subcommandOptionCtrl" multiple>
         <mat-option
           *ngFor="let option of subCommandCtrl?.value.options | filterOption"
           [value]="option"
@@ -100,8 +100,7 @@
       appearance="fill"
     >
       <mat-label>Options</mat-label>
-      <mat-select [formControl]="optionCtrl">
-        <mat-option>None</mat-option>
+      <mat-select [formControl]="optionCtrl" multiple>
         <mat-option
           *ngFor="let option of commandCtrl?.value?.options | filterOption"
           [value]="option"
