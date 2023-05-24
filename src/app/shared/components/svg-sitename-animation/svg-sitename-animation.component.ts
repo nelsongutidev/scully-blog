@@ -85,102 +85,82 @@ import { CommonModule } from '@angular/common';
   </svg> `,
   styles: [
     `
+      /* PATHS */
       :host {
-        /* PATHS */
-        .path {
-          fill: transparent;
-          stroke-dasharray: 110;
-          stroke-dashoffset: 90;
-          animation: dash 4s ease-in forwards;
-          animation-iteration-count: infinite; // evaluate this!
-        }
-
-        .path.char-n {
-          animation-delay: 0.5s;
-        }
-
-        .path.char-e {
-          animation-delay: 0.75s;
-        }
-
-        .path.char-l {
-          animation-delay: 1s;
-          stroke-dasharray: 125;
-        }
-
-        .path.char-s {
-          animation-delay: 1.25s;
-          stroke-dasharray: 160;
-        }
-
-        .path.char-o {
-          animation-delay: 1.5s;
-          stroke-dasharray: 210;
-        }
-
-        .path.char-n2 {
-          animation-delay: 1.75s;
-          stroke-dasharray: 125;
-        }
-
-        .path.char-g {
-          animation-delay: 2s;
-          stroke-dasharray: 110;
-        }
-
-        .path.char-u {
-          animation-delay: 2.25s;
-          stroke-dasharray: 80;
-        }
-
-        .path.char-t {
-          animation-delay: 2.5s;
-          stroke-dasharray: 120;
-        }
-
-        .path.char-i {
-          animation-delay: 3s;
-          // stroke-dasharray: 120;
-        }
-
-        .path.char-dot {
-          animation-delay: 3.25s;
-          // stroke-dasharray: 120;
-        }
-
-        .path.char-d {
-          animation-delay: 3.55s;
-          // stroke-dasharray: 120;
-        }
-
-        .path.char-e2 {
-          animation-delay: 3.75s;
-          // stroke-dasharray: 120;
-        }
-
-        .path.char-v {
-          animation-delay: 4s;
-          animation-duration: 10s;
-          // stroke-dasharray: 120;
-        }
-
         /* STROKE ANIMATIONS */
-        @keyframes dash {
-          0% {
-            stroke: #494b51;
-          }
-          25% {
-            stroke-dashoffset: 0;
-            fill: transparent;
-          }
-          65% {
-            fill: #393939;
-          }
-          100% {
-            stroke: #444444;
-            fill: #444444;
-            stroke-dashoffset: 0;
-          }
+      }
+      :host .path {
+        fill: transparent;
+        stroke-dasharray: 110;
+        stroke-dashoffset: 90;
+        animation: dash 4s ease-in forwards;
+        animation-iteration-count: infinite;
+      }
+      :host .path.char-n {
+        animation-delay: 0.5s;
+      }
+      :host .path.char-e {
+        animation-delay: 0.75s;
+      }
+      :host .path.char-l {
+        animation-delay: 1s;
+        stroke-dasharray: 125;
+      }
+      :host .path.char-s {
+        animation-delay: 1.25s;
+        stroke-dasharray: 160;
+      }
+      :host .path.char-o {
+        animation-delay: 1.5s;
+        stroke-dasharray: 210;
+      }
+      :host .path.char-n2 {
+        animation-delay: 1.75s;
+        stroke-dasharray: 125;
+      }
+      :host .path.char-g {
+        animation-delay: 2s;
+        stroke-dasharray: 110;
+      }
+      :host .path.char-u {
+        animation-delay: 2.25s;
+        stroke-dasharray: 80;
+      }
+      :host .path.char-t {
+        animation-delay: 2.5s;
+        stroke-dasharray: 120;
+      }
+      :host .path.char-i {
+        animation-delay: 3s;
+      }
+      :host .path.char-dot {
+        animation-delay: 3.25s;
+      }
+      :host .path.char-d {
+        animation-delay: 3.55s;
+      }
+      :host .path.char-e2 {
+        animation-delay: 3.75s;
+      }
+      :host .path.char-v {
+        animation-delay: 4s;
+        animation-duration: 10s;
+      }
+      @keyframes dash {
+        0% {
+          stroke: #494b51;
+        }
+        25% {
+          stroke-dashoffset: 0;
+          fill: transparent;
+        }
+        65% {
+          fill: #393939;
+        }
+        100% {
+          stroke: #444;
+          fill: #444;
+          stroke-dashoffset: 0;
         }
       }
     `,

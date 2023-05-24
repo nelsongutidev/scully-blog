@@ -580,6 +580,7 @@ export const RAW_NG_COMMANDS: Command[] = [
           {
             name: 'app-id',
             type: 'string',
+            deprecated: 'This option is no longer used.',
             default: 'serverApp',
             description: 'The application ID to use in withServerTransition().',
           },
@@ -603,7 +604,7 @@ export const RAW_NG_COMMANDS: Command[] = [
           {
             name: 'root-module-file-name',
             type: 'string',
-            default: 'app.server.module.ts',
+            default: 'app.module.server.ts',
             description: 'The name of the root module file',
           },
           {
@@ -690,6 +691,13 @@ export const RAW_NG_COMMANDS: Command[] = [
             default: false,
             description:
               'Do not create "spec.ts" test files for the application.',
+          },
+          {
+            name: 'standalone',
+            type: 'boolean',
+            default: false,
+            description:
+              'Creates an application based upon the standalone API, without NgModules.',
           },
           {
             name: 'strict',
@@ -1231,6 +1239,13 @@ export const RAW_NG_COMMANDS: Command[] = [
             description:
               'Do not update "tsconfig.json" to add a path mapping for the new library. The path mapping is needed to use the library in an app, but can be disabled here to simplify development.',
           },
+          {
+            name: 'standalone',
+            type: 'boolean',
+            default: false,
+            description:
+              'Creates a library based upon the standalone API, without NgModules.',
+          },
         ],
         aliases: ['lib'],
         deprecated: false,
@@ -1675,6 +1690,13 @@ export const RAW_NG_COMMANDS: Command[] = [
         default: false,
         description:
           'Do not generate "spec.ts" test files for the new project.',
+      },
+      {
+        name: 'standalone',
+        type: 'boolean',
+        default: false,
+        description:
+          'Creates an application based upon the standalone API, without NgModules.',
       },
       {
         name: 'strict',

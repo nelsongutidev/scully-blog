@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* include CSS for prism toolbar */
+@import "prismjs/plugins/toolbar/prism-toolbar.css";
+/* check node_modules/prismjs/themes/ for the available themes */
+@import "prismjs/themes/prism-tomorrow";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@screen lg {
+  body {
+    height: 100vh;
+  }
+}
+body {
+  background-color: #f9f9f9;
+}
+
+.markdown h1,
+h2,
+h3,
+p,
+pre {
+  @apply my-8;
+}
+
+.markdown img {
+  @apply flex mx-auto;
+}
+.markdown h1 {
+  @apply text-4xl;
+}
+
+.markdown h2 {
+  @apply text-3xl;
+}
+
+.markdown h3 {
+  @apply text-2xl;
+}
+
+.markdown h4 {
+  @apply text-xl;
+}
+
+.markdown h5 {
+  @apply text-lg;
+}
+
+.markdown h6 {
+  @apply text-base;
+}
+
+.markdown p {
+  @apply text-base;
+}

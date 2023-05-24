@@ -16,7 +16,6 @@ type NavItem = {
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss'],
   imports: [
     CommonModule,
     RouterModule,
