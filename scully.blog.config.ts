@@ -34,10 +34,10 @@ export const config: ScullyConfig = {
         folder: './tips',
       },
     },
-    '/tips/es:id': {
+    '/tips/es/:id': {
       type: 'contentFolder',
       id: {
-        folder: './tips/es',
+        folder: './tips_es',
       },
     },
   },

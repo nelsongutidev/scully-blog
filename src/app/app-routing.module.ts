@@ -31,11 +31,10 @@ const routes: Routes = [
   },
   {
     path: 'tips/es',
-    pathMatch: 'full',
     component: TipsComponent,
   },
   {
-    path: 'tips/es:id',
+    path: 'tips/es/:id',
     component: TipComponent,
   },
   {
