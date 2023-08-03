@@ -3,73 +3,51 @@
 >
   About me
 </h1>
-<h2
-  class="md:text-3xl text-2xl font-normal tracking-tight lg:px-24 md:px-12 px-6 py-4"
->
-  Hi! I'm Nelson Gutiérrez, a software engineer from Costa Rica.
-</h2>
-<section class="">
-  <div class="px-6 py-6 md:px-12 text-gray-800 xl:text-left">
-    <div class="container mx-auto xl:px-12">
-      <div class="grid xl:grid-cols-2 flex">
-        <div class="flex flex-col justify-center space-y-6 flex">
-          <h3 class="font-medium text-2xl">Here's a few things about me:</h3>
 
-          <ul class="list-disc pl-4 text-left text-xl space-y-2 font-normal">
-            <li>
-              I'm currently working as a Senior Software Engineer at
+<section class="px-8 py-4">
+  <div class="">
+    <div class="flex flex-col lg:flex-row gap-8 items-center">
+      <div>
+        <h1 class="text-5xl font-bold mb-4">
+          I'm currently working as a Senior Software Engineer at
 
-              <a
-                href="https://www.herodevs.com/"
-                class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                HeroDevs
-                <svg
-                  aria-hidden="true"
-                  class="w-5 h-5 ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg> </a
-              >.
-            </li>
-            <li>
-              I have {{ yearsOfExperience }} years of experience in the software
-              industry.
-            </li>
-            <li>
-              I'm also a big fan of open source software, and I'm always looking
-              for new ways to contribute to the community.
-            </li>
-            <li>
-              Passionate about the Angular framework, my initials are
-              {{ initials }} after all.
-            </li>
-            <li>
-              Some of my hobbies are playing piano and guitar, running, soccer
-              and watching NBA games 🏀.
-            </li>
-            <li>
-              I love spending time with my family, and I'm also a big fan of
-              traveling.
-            </li>
-          </ul>
-        </div>
+          <a
+            href="https://www.herodevs.com/"
+            class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          >
+            HeroDevs
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+        </h1>
 
-        <div class="flex align-center justify-center items-center md:mt-6 mt-6">
-          <img
-            src="/assets/images/family.jpeg"
-            class="w-80 max-h-fit rounded-lg shadow-lg"
-            alt=""
-          />
-        </div>
+        <p class="pr-8">
+          I have {{ yearsOfExperience }} years of experience in the software
+          industry. I'm also a big fan of open source software, and I'm always
+          looking for new ways to contribute to the community. Passionate about
+          the Angular framework, my initials are {{ initials }} after all. Some
+          of my hobbies are playing piano and guitar, running, soccer and
+          watching NBA games 🏀. I love spending time with my family, and I'm
+          also a big fan of traveling.
+        </p>
       </div>
+      <img
+        ngSrc="/assets/images/family.jpeg"
+        class="rounded-lg shadow-2xl"
+        width="270"
+        height="338"
+      />
     </div>
   </div>
 </section>

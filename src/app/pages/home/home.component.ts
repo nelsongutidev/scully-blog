@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SocialsComponent } from '../../shared/components/social/social.component';
@@ -8,7 +8,7 @@ import { SocialsComponent } from '../../shared/components/social/social.componen
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [CommonModule, SocialsComponent, RouterModule],
+  imports: [CommonModule, SocialsComponent, RouterModule, NgOptimizedImage],
 })
 export class HomeComponent implements OnInit {
   ngOnInit() {}
