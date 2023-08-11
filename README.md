@@ -32,7 +32,7 @@ This project contains an Angular CLI Explorer, which constructs the desired CLI 
 
 ## MIT License
 
-Copyright (c) 20123 Nelson Gutierrez and others
+Copyright (c) 2023 Nelson Gutierrez and others
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
