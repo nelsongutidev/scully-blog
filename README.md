@@ -1,4 +1,4 @@
-# Personal site made with Scully, Tailwind and ng15
+# Personal site made with Scully, Tailwind and ng16
 
 This project is my personal site, which contains the code tips I create and my blog. It was made with [Scully](https://scully.io/), [Tailwind](https://tailwindcss.com/docs/installation) and Angular v15.
 
@@ -25,6 +25,10 @@ If you create a new .md file or updated it, make sure you run `npm run scully --
 ## Can I use this project
 
 Feel free to use this code. Create your own blog, or your own site and style it however you like and ship it 🚀. Just try to make it your own 😉.
+
+## Angular CLI Explorer
+
+This project contains an Angular CLI Explorer, which constructs the desired CLI command after selecting from the available options
 
 ## MIT License
 
