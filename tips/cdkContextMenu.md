@@ -16,16 +16,14 @@ The @angular/cdk/menu module provides directives to help create custom menu inte
 One of them is the `cdkContextMenuTrigger` directive, which opens a menu when a user right-clicks within its host element. It is aware of nested context menus and will trigger only the lowest level non-disabled context menu.
 
 ```html
-<div class="main">
-  <div [cdkContextMenuTriggerFor]="context_menu">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-  <ng-template #context_menu>
-    <div class="example-menu" cdkMenu>
-      <button class="example-menu-item" cdkMenuItem>Cut</button>
-      <button class="example-menu-item" cdkMenuItem>Copy</button>
-      <button class="example-menu-item" cdkMenuItem>Link</button>
-    </div>
-  </ng-template>
-</div>
+<div [cdkContextMenuTriggerFor]="context_menu">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+<ng-template #context_menu>
+  <div class="example-menu" cdkMenu>
+    <button class="example-menu-item" cdkMenuItem>Cut</button>
+    <button class="example-menu-item" cdkMenuItem>Copy</button>
+    <button class="example-menu-item" cdkMenuItem>Link</button>
+  </div>
+</ng-template>
 ```
 
 Add the necessary imports to your component to use the directive.
