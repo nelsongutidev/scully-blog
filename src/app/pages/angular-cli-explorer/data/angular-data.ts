@@ -572,6 +572,26 @@ export const RAW_NG_COMMANDS: Command[] = [
     ],
     subcommands: [
       {
+        name: 'standalone migration',
+        command: '@angular/core:standalone',
+        shortDescription: 'Migrates current project to use standalone APIs',
+        options: [
+          {
+            name: 'mode',
+            type: 'string',
+            description:
+              'The migration mode to execute: "convert-to-standalone" | "prune-ng-modules" | "standalone-bootstrap"',
+          },
+          {
+            name: 'path',
+            type: 'string',
+            description: 'The path to migrate, relative to the project root.',
+          },
+        ],
+        aliases: [],
+        deprecated: false,
+      },
+      {
         name: 'app-shell',
         command: 'app-shell',
         shortDescription:
